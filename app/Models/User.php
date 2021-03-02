@@ -10,7 +10,7 @@ use Laravel\Fortify\TwoFactorAuthenticatable;
 use Laravel\Jetstream\HasProfilePhoto;
 use Laravel\Sanctum\HasApiTokens;
 
-class User extends Authenticatable
+class User extends Authenticatable implements MustVerifyEmail
 {
     use HasApiTokens;
     use HasFactory;
@@ -24,10 +24,15 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
+        'uscmpc_id',
         'title',
         'first_name',
         'middle_name',
         'last_name',
+        'can_vote',
+        'vote_status',
+        'membership',
+        'membership_date',
         'email',
         'password',
     ];
