@@ -20,10 +20,10 @@ class CreateUsersTable extends Migration
             $table->string('first_name');
             $table->string('middle_name')->nullable();
             $table->string('last_name');
-            $table->string('membership');
-            $table->boolean('can_vote');
-            $table->boolean('vote_status');
-            $table->date('membership_date');
+            $table->string('membership')->nullable();
+            $table->boolean('can_vote')->nullable();
+            $table->boolean('vote_status')->nullable();
+            $table->date('membership_date')->nullable();
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
