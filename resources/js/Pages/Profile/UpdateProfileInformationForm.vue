@@ -41,11 +41,39 @@
                 <jet-input-error :message="form.errors.photo" class="mt-2" />
             </div>
 
-            <!-- Name -->
+            <!-- Title -->
             <div class="col-span-6 sm:col-span-4">
-                <jet-label for="name" value="Name" />
-                <jet-input id="name" type="text" class="mt-1 block w-full" v-model="form.name" autocomplete="name" />
-                <jet-input-error :message="form.errors.name" class="mt-2" />
+                <jet-label for="title" value="Title" />
+                <jet-input id="title" type="text" class="mt-1 block w-full" v-model="form.title" autocomplete="title" />
+                <jet-input-error :message="form.errors.title" class="mt-2" />
+            </div>
+
+            <!-- First Name -->
+            <div class="col-span-6 sm:col-span-4">
+                <jet-label for="first_name" value="First Name" />
+                <jet-input id="first_name" type="text" class="mt-1 block w-full" v-model="form.first_name" autocomplete="first_name" />
+                <jet-input-error :message="form.errors.first_name" class="mt-2" />
+            </div>
+
+            <!-- Middle Name -->
+            <div class="col-span-6 sm:col-span-4">
+                <jet-label for="middle_name" value="Middle Name" />
+                <jet-input id="middle_name" type="text" class="mt-1 block w-full" v-model="form.middle_name" autocomplete="middle_name" />
+                <jet-input-error :message="form.errors.middle_name" class="mt-2" />
+            </div>
+
+            <!-- Last Name -->
+            <div class="col-span-6 sm:col-span-4">
+                <jet-label for="last_name" value="Last Name" />
+                <jet-input id="last_name" type="text"  class="mt-1 block w-full" v-model="form.last_name" autocomplete="last_name" />
+                <jet-input-error :message="form.errors.last_name" class="mt-2" />
+            </div>
+
+            <!-- Membership Type -->
+            <div class="col-span-6 sm:col-span-4">
+                <jet-label for="membership" value="Membership Type" />
+                <jet-input id="membership" type="text" disabled="true" class="mt-1 block w-full" v-model="form.membership" autocomplete="membership" />
+                <jet-input-error :message="form.errors.membership" class="mt-2" />
             </div>
 
             <!-- Email -->
@@ -54,6 +82,7 @@
                 <jet-input id="email" type="email" class="mt-1 block w-full" v-model="form.email" />
                 <jet-input-error :message="form.errors.email" class="mt-2" />
             </div>
+
         </template>
 
         <template #actions>
@@ -94,7 +123,11 @@
             return {
                 form: this.$inertia.form({
                     _method: 'PUT',
-                    name: this.user.name,
+                    title: this.user.title,
+                    first_name: this.user.first_name,
+                    middle_name: this.user.middle_name,
+                    last_name: this.user.last_name,
+                    membership: this.user.membership,
                     email: this.user.email,
                     photo: null,
                 }),
