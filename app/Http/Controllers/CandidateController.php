@@ -9,7 +9,7 @@ class CandidateController extends Controller
 {
     public function list() {
         $candidates = Candidate::join('users', 'candidates.user_id', '=', 'users.id')
-                                ->get(['candidates.*', 'users.*']);
+                                ->get(['candidates.id', 'title', 'first_name', 'last_name', 'profile_photo_path']);
         return response()->json($candidates);
     }
 }

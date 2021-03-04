@@ -20,7 +20,7 @@
 
                 <!-- Current Profile Photo -->
                 <div class="mt-2" v-show="! photoPreview">
-                    <img :src="user.profile_photo_url" :alt="user.name" class="rounded-full h-20 w-20 object-cover">
+                    <img :src="user.profile_photo_url" :alt="user.first_name" class="rounded-full h-20 w-20 object-cover">
                 </div>
 
                 <!-- New Profile Photo Preview -->
@@ -44,7 +44,7 @@
             <!-- Title -->
             <div class="col-span-6 sm:col-span-4">
                 <jet-label for="title" value="Title" />
-                <jet-input id="title" type="text" class="mt-1 block w-full" v-model="form.title" autocomplete="title" />
+                <jet-input id="title" type="text" class="mt-1 block" v-model="form.title" autocomplete="title" />
                 <jet-input-error :message="form.errors.title" class="mt-2" />
             </div>
 
@@ -72,7 +72,7 @@
             <!-- Membership Type -->
             <div class="col-span-6 sm:col-span-4">
                 <jet-label for="membership" value="Membership Type" />
-                <jet-input id="membership" type="text" disabled="true" class="mt-1 block w-full" v-model="form.membership" autocomplete="membership" />
+                <jet-input id="membership" type="text" disabled="true" class="mt-1 block w-full bg-gray-300" v-model="form.membership" autocomplete="membership" />
                 <jet-input-error :message="form.errors.membership" class="mt-2" />
             </div>
 
