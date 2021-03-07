@@ -3,10 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Election;
-use App\Models\User;
 
-class ElectionController extends Controller
+class UserController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -25,7 +23,7 @@ class ElectionController extends Controller
      */
     public function create()
     {
-        //
+        return User::all();
     }
 
     /**
@@ -36,19 +34,7 @@ class ElectionController extends Controller
      */
     public function store(Request $request)
     {
-        for($ndx=0; $ndx<count($request->input('candidates')); $ndx++){
-            $election = new Election([
-                'voter_id' => $request->input('voter'),
-                'candidate_id' => $request->input('candidates')[$ndx]
-            ]);
-
-            $election->save();
-        }
-        $user = User::find($request->input('voter'));
-        $user->vote_status = 1;
-        $user->save();
-
-        return "Vote done";
+        //
     }
 
     /**

@@ -9,7 +9,7 @@
         <form @submit.prevent="submit">
             <div>
                 <jet-label for="title" value="Title" />
-                <jet-input id="title" type="text" class="mt-1 block w-full" v-model="form.title" required autofocus autocomplete="title" />
+                <jet-input id="title" type="text" class="mt-1 block w-full" v-model="form.title" autofocus autocomplete="title" />
             </div>
 
             <div class="mt-4">
@@ -68,13 +68,14 @@
 </template>
 
 <script>
-    import JetAuthenticationCard from '@/Jetstream/AuthenticationCard'
-    import JetAuthenticationCardLogo from '@/Jetstream/AuthenticationCardLogo'
-    import JetButton from '@/Jetstream/Button'
-    import JetInput from '@/Jetstream/Input'
+    import JetAuthenticationCard from '@/Jetstream/AuthenticationCard';
+    import JetAuthenticationCardLogo from '@/Jetstream/AuthenticationCardLogo';
+    import JetButton from '@/Jetstream/Button';
+    import JetInput from '@/Jetstream/Input';
     import JetCheckbox from "@/Jetstream/Checkbox";
-    import JetLabel from '@/Jetstream/Label'
-    import JetValidationErrors from '@/Jetstream/ValidationErrors'
+    import JetLabel from '@/Jetstream/Label';
+    import JetValidationErrors from '@/Jetstream/ValidationErrors';
+    import JetDropdown from '@/Jetstream/Dropdown';
 
     export default {
         components: {
@@ -84,7 +85,8 @@
             JetInput,
             JetCheckbox,
             JetLabel,
-            JetValidationErrors
+            JetValidationErrors,
+            JetDropdown
         },
 
         data() {
@@ -98,7 +100,13 @@
                     password: '',
                     password_confirmation: '',
                     terms: false,
-                })
+                }),
+                titles:[
+                    {
+                        options:["", "Mr", "Ms", "Sir", "Ma'am"],
+                        selectedOption: ""
+                    }
+                ]
             }
         },
 

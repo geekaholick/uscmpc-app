@@ -31,9 +31,11 @@ class User extends Authenticatable implements MustVerifyEmail
         'last_name',
         'can_vote',
         'vote_status',
+        'poll_status',
         'membership',
         'membership_date',
         'type',
+        'election_status',
         'email',
         'password',
     ];

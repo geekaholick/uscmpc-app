@@ -1,46 +1,81 @@
 <template>
     <div>
         <div class="p-6 sm:px-20 bg-white border-b border-gray-200">
-<!--            <div>-->
-<!--                <jet-application-logo class="block h-12 w-auto" />-->
-<!--            </div>-->
-
             <div class="mt-8 text-2xl">
                 Board of Directors USC MPC Election 2021!
             </div>
 
-            <div class="mt-6 text-gray-500">
-                <div v-if="$page.props.user.can_vote && !$page.props.user.vote_status">
-                    You are <span class="lg:font-bold underline italic">ELIGIBLE</span> for voting in the election for the board of directors.
-                    Please select a maximum of <span class="lg:font-bold">3</span> members in the candidates listed.
+            <div v-if="$page.props.user.uscmpc_id==null">
+                <div class="mt-6 text-gray-500">
+                    Please wait as your account is being reviewed for authenticity.
+                </div>
+            </div>
+
+            <div v-else>
+                <div class="mt-6 text-gray-500" v-if="$page.props.user.election_status==0">
+                    <div>
+                        The election has not yet started. Please wait for the advisory of the opening of the election by the
+                        election committee.<br/>
+                        Election Schedule:
+                        <div class="list-none pl-7 font-bold">
+                            <li>Open -> 10:30 AM</li>
+                            <li>Close -> 11:30 AM</li>
+                        </div>
+                    </div>
                 </div>
 
-                <div v-else-if="$page.props.user.can_vote && $page.props.user.vote_status">
-                    Thank you for exercising your right to vote. The election committee will announce the winner before the end of the General Assembly.
-                </div>
+                <div class="mt-6 text-gray-500" v-else-if="$page.props.user.election_status==1">
+                    <div v-if="$page.props.user.can_vote && !$page.props.user.vote_status">
+                        You are <span class="lg:font-bold underline italic">ELIGIBLE</span> for voting in the election for
+                        the board of directors.
+                        Please select a maximum of <span class="lg:font-bold">3</span> members in the candidates listed.
+                    </div>
 
-                <div v-else>
-                    Sorry to inform you that you're <span class="lg:font-bold underline italic">NOT ELIGIBLE</span> for voting in the election for the board of directors.
+                    <div v-else-if="$page.props.user.can_vote && $page.props.user.vote_status">
+                        Thank you for exercising your right to vote. The election committee will announce the winner before
+                        the end of the General Assembly.<br/>
+                        Please participate also in the poll.
+                    </div>
+
+                    <div v-else>
+                        Sorry to inform you that you're <span class="lg:font-bold underline italic">NOT ELIGIBLE</span> for
+                        voting in the election for the board of directors.<br/><br/>
+                        If you have questions, please don't hesitate to contact the office.<br/>
+                        Contact Email: usc_mpc@yahoo.com <br/>
+                        Alternate Email: official.uscmpc@gmail.com<br/>
+                        Contact Number: (032)384 0024<br/>
+                        Contact Person: Maria Conception Gaviola
+                    </div>
+                </div>
+                <div class="mt-6 text-gray-500" v-else-if="$page.props.user.election_status==2">
+                    <div>
+                        Thank you for exercising your right to vote. The election has ended. The election committee will
+                        announce the winner before the end of the USC MPC General Assembly 2021.<br/>
+                        If you have not yet participated in the poll, please answer them in the poll section.
+                    </div>
                 </div>
             </div>
         </div>
-        <div class="bg-gray-200 bg-opacity-25 grid grid-cols-1 md:grid-cols-1" v-if="$page.props.user.can_vote && !$page.props.user.vote_status">
+
+        <div class="bg-gray-200 bg-opacity-25 grid grid-cols-1 md:grid-cols-1"
+             v-if="$page.props.user.can_vote && !$page.props.user.vote_status && $page.props.user.election_status==1" && $page.props.user.uscmpc_id!=null>
             <div>
                 <candidate-list/>
             </div>
         </div>
-
     </div>
 </template>
 
 <script>
-    import JetApplicationLogo from '@/Jetstream/ApplicationLogo'
-    import CandidateList from "./CandidateList";
+import JetApplicationLogo from '@/Jetstream/ApplicationLogo'
+import CandidateList from "./CandidateList";
+import DangerButton from "../../Jetstream/DangerButton";
 
-    export default {
-        components: {
-            JetApplicationLogo,
-            CandidateList
-        },
-    }
+export default {
+    components: {
+        DangerButton,
+        JetApplicationLogo,
+        CandidateList
+    },
+}
 </script>

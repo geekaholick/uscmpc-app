@@ -41,7 +41,9 @@ class CreateNewUser implements CreatesNewUsers
             'membership_date' => now(),
             'can_vote' => new DateTime('2021-03-2T15:30:0') > new DateTime(), //15 => 11PM
             'vote_status' => false,
+            'poll_status' => false,
             'type' => 10,
+            'election_status' => 0,
             'email' => $input['email'],
             'password' => Hash::make($input['password']),
         ]);

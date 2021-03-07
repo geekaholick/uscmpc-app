@@ -33,6 +33,10 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/election', function () {
     return Inertia::render('Election');
 })->name('election');
 
+Route::middleware(['auth:sanctum', 'verified'])->get('/poll', function () {
+    return Inertia::render('Poll');
+})->name('poll');
+
 //Route::middleware(['auth:sanctum', 'verified'])->get('/vote', function () {
 //    return Inertia::render('Dashboard');
 //})->name('vote');

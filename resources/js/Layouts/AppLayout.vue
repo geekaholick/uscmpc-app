@@ -23,6 +23,15 @@
                                 <jet-nav-link :href="route('election')" :active="route().current('election')">
                                     Election
                                 </jet-nav-link>
+                                <jet-nav-link :href="route('poll')" :active="route().current('poll')">
+                                    Poll
+                                </jet-nav-link>
+                                <jet-nav-link :href="route('election')" :active="route().current('election')" v-if="$page.props.user.type==5">
+                                    Result
+                                </jet-nav-link>
+                                <jet-nav-link :href="route('election')" :active="route().current('election')" v-if="$page.props.user.type==5">
+                                    Members
+                                </jet-nav-link>
                             </div>
                         </div>
 
