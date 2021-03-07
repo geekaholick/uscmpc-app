@@ -24,7 +24,7 @@ class CreateUsersTable extends Migration
             $table->boolean('can_vote')->nullable();
             $table->boolean('vote_status')->nullable();
             $table->date('membership_date')->nullable();
-            $table->foreignId('type');
+            $table->foreignId('type')->nullable();
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');

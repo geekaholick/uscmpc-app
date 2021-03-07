@@ -33,6 +33,7 @@ class User extends Authenticatable implements MustVerifyEmail
         'vote_status',
         'membership',
         'membership_date',
+        'type',
         'email',
         'password',
     ];

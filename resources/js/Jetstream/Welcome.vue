@@ -35,7 +35,7 @@
                         Eligible voting member must be:
                         <div class="list-disc pl-2">
                             <li>a regular member of the USC MPC.</li>
-                            <li>registered before 9:00 AM during the General Assembly Day.</li>
+                            <li>registered before 9:30 AM during the General Assembly Day.</li>
                             <li>a member of good standing (MIGS).</li>
                         </div>
 
@@ -43,8 +43,8 @@
                     <div class="mt-2 text-sm text-gray-500">
                         Election Schedule:
                         <div class="list-none pl-7 font-bold">
-                            <li>Open  -> 10:00 AM</li>
-                            <li>Close -> 10:30 AM</li>
+                            <li>Open  -> 10:30 AM</li>
+                            <li>Close -> 11:30 AM</li>
                         </div>
 
                     </div>
