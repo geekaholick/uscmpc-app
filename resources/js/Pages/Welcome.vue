@@ -28,7 +28,7 @@
                 </div>
                 <div>
                     University of San Carlos<br/>
-                    Multi-purpose Cooperative
+                    Multi-purpose Cooperativessssssssssss
                 </div>
 
             </div>
