@@ -2,10 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="54c67983-f201-467a-b8a2-aa792b7a51e2" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/public/images/uscmpc-logo.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/uscmpc-logo.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/app.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/js/Pages/Welcome.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/Pages/Welcome.vue" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -202,7 +198,7 @@
       <workItem from="1614749115819" duration="18393000" />
       <workItem from="1614777997076" duration="1346000" />
       <workItem from="1614787350529" duration="33399000" />
-      <workItem from="1615102249923" duration="27500000" />
+      <workItem from="1615102249923" duration="28096000" />
     </task>
     <servers />
   </component>
