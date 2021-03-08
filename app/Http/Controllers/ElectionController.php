@@ -95,4 +95,19 @@ class ElectionController extends Controller
     {
         //
     }
+
+    public function getResults()
+    {
+
+        $data = [
+            Election::where('candidate_id', '=', 1)->count(),
+            Election::where('candidate_id', '=', 2)->count(),
+            Election::where('candidate_id', '=', 3)->count(),
+            Election::where('candidate_id', '=', 4)->count(),
+            Election::where('candidate_id', '=', 5)->count(),
+            Election::where('candidate_id', '=', 6)->count(),
+            Election::where('candidate_id', '=', 7)->count(),
+        ];
+        return $data;
+    }
 }

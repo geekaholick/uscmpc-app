@@ -2,15 +2,23 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="54c67983-f201-467a-b8a2-aa792b7a51e2" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/resources/js/Pages/Control.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/Pages/Member.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/Pages/Member/CandidateList.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/Pages/Member/ResultShow.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/Pages/Result.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/Pages/Result/CandidateList.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/Pages/Result/ResultShow.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/Pages/Tech/CandidateList.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/Pages/Tech/Show.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ElectionController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ElectionController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/UserController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/UserController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/Jetstream/Welcome.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/Jetstream/Welcome.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/js/Layouts/AppLayout.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/Layouts/AppLayout.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/Pages/Auth/Login.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/Pages/Auth/Login.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/Pages/Auth/Register.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/Pages/Auth/Register.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/Pages/Election/VoteShow.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/Pages/Election/VoteShow.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/Pages/Profile/Show.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/Pages/Profile/Show.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/Pages/Welcome.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/Pages/Welcome.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/app.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -172,7 +180,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/js/Pages/Poll" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/js/Pages/Member" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
@@ -182,10 +190,14 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\DCISM_REX\Desktop\FINAL_MPC\uscmpc-app\resources\js\Pages\Poll" />
+      <recent name="C:\Users\DCISM_REX\Desktop\FINAL_MPC\uscmpc-app\resources\js\Pages\Member" />
+      <recent name="C:\Users\DCISM_REX\Desktop\FINAL_MPC\uscmpc-app\resources\js\Pages\Tech" />
       <recent name="C:\Users\DCISM_REX\Desktop\FINAL_MPC\uscmpc-app\resources\js\Pages" />
-      <recent name="C:\Users\DCISM_REX\Desktop\MPC\uscmpc-app\resources\js\Pages\Election" />
-      <recent name="C:\Users\DCISM_REX\Desktop\MPC\uscmpc-app\resources\js\Pages" />
+      <recent name="C:\Users\DCISM_REX\Desktop\FINAL_MPC\uscmpc-app\resources\js\Pages\Result" />
+      <recent name="C:\Users\DCISM_REX\Desktop\FINAL_MPC\uscmpc-app\resources\js\Pages\Election" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\DCISM_REX\Desktop\FINAL_MPC\uscmpc-app\resources\js\Pages\Result" />
     </key>
   </component>
   <component name="RunManager">
@@ -206,7 +218,7 @@
       <workItem from="1614749115819" duration="18393000" />
       <workItem from="1614777997076" duration="1346000" />
       <workItem from="1614787350529" duration="33399000" />
-      <workItem from="1615102249923" duration="36346000" />
+      <workItem from="1615102249923" duration="44169000" />
     </task>
     <servers />
   </component>

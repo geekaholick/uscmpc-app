@@ -37,6 +37,18 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/poll', function () {
     return Inertia::render('Poll');
 })->name('poll');
 
+Route::middleware(['auth:sanctum', 'verified'])->get('/result', function () {
+    return Inertia::render('Result');
+})->name('result');
+
+Route::middleware(['auth:sanctum', 'verified'])->get('/member', function () {
+    return Inertia::render('Member');
+})->name('member');
+
+Route::middleware(['auth:sanctum', 'verified'])->get('/control', function () {
+    return Inertia::render('Control');
+})->name('control');
+
 //Route::middleware(['auth:sanctum', 'verified'])->get('/vote', function () {
 //    return Inertia::render('Dashboard');
 //})->name('vote');

@@ -27,13 +27,17 @@
                                 <jet-nav-link :href="route('poll')" :active="route().current('poll')">
                                     Poll
                                 </jet-nav-link>
-                                <jet-nav-link :href="route('election')" :active="route().current('election')"
-                                              v-if="$page.props.user.type==5">
+                                <jet-nav-link :href="route('result')" :active="route().current('result')"
+                                              v-if="$page.props.user.type==5 || $page.props.user.type==1">
                                     Result
                                 </jet-nav-link>
-                                <jet-nav-link :href="route('election')" :active="route().current('election')"
-                                              v-if="$page.props.user.type==5">
-                                    Members
+                                <jet-nav-link :href="route('member')" :active="route().current('member')"
+                                              v-if="$page.props.user.type==5 || $page.props.user.type==1">
+                                    Member
+                                </jet-nav-link>
+                                <jet-nav-link :href="route('control')" :active="route().current('control')"
+                                              v-if="$page.props.user.type==1">
+                                    Control
                                 </jet-nav-link>
                             </div>
                         </div>
