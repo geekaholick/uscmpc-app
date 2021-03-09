@@ -47,9 +47,8 @@ export default {
         this.list();
         this.getCount();
         this.getResult();
-        setInterval(this.list, 3000);
-        setInterval(this.getCount, 3000);
-        setInterval(this.getResult, 3000);
+        setInterval(this.getCount, 60000);
+        setInterval(this.getResult, 60000);
     },
     methods: {
         list() {
