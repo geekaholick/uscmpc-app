@@ -93,7 +93,7 @@ export default {
         toggleActive(index) {
             if (this.count < 3 || this.candidates[index].isActive) {
                 if (this.candidates[index].isActive) {
-                    let x = this.chosenCandidates.indexOf(this.candidates[index].user_id);
+                    let x = this.chosenCandidates.indexOf(this.candidates[index].id);
                     let y = this.chosenCandidatesName.indexOf(this.candidates[index].first_name + " " + this.candidates[index].last_name);
                     if (x > -1) {
                         this.chosenCandidates.splice(x, 1);
@@ -101,7 +101,7 @@ export default {
                     }
                     this.count--;
                 } else {
-                    this.chosenCandidates.push(this.candidates[index].user_id);
+                    this.chosenCandidates.push(this.candidates[index].id);
                     this.chosenCandidatesName.push(this.candidates[index].first_name + " " + this.candidates[index].last_name);
                     this.count++;
                 }

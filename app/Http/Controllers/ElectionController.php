@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Candidate;
 use Illuminate\Http\Request;
 use App\Models\Election;
 use App\Models\User;
@@ -98,16 +99,14 @@ class ElectionController extends Controller
 
     public function getResults()
     {
+        $candidates = Candidate::get();
 
-        $data = [
-            Election::where('candidate_id', '=', 1)->count(),
-            Election::where('candidate_id', '=', 2)->count(),
-            Election::where('candidate_id', '=', 3)->count(),
-            Election::where('candidate_id', '=', 4)->count(),
-            Election::where('candidate_id', '=', 5)->count(),
-            Election::where('candidate_id', '=', 6)->count(),
-            Election::where('candidate_id', '=', 7)->count(),
-        ];
+        $data = [];
+
+        foreach($candidates as $candidate){
+            $count = Election::where('candidate_id', '=', $candidate['id'])->count();
+            array_push($data, $count);
+        }
         return $data;
     }
 }
