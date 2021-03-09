@@ -53,7 +53,7 @@ export default {
     methods: {
         list() {
             let BaseApi = axios.create({
-                baseURL: "http://localhost:8000/api"
+                baseURL: "http://event.uscmpc.com/api"
             });
             BaseApi.get("candidate-list").then((response) => {
                 console.log(response.data);
@@ -66,7 +66,7 @@ export default {
         },
         getCount() {
             let BaseApi = axios.create({
-                baseURL: "http://localhost:8000/api"
+                baseURL: "http://event.uscmpc.com/api"
             });
             BaseApi.get("count").then((response) => {
                 console.log(response.data);
