@@ -111,7 +111,7 @@ export default {
         },
         list() {
             let BaseApi = axios.create({
-                baseURL: "http://localhost:8000/api"
+                baseURL: "http://event.uscmpc.com/api"
             });
             BaseApi.get("candidate-list").then((response) => {
                 console.log(response.data);

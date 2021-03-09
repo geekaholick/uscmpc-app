@@ -17843,7 +17843,7 @@ __webpack_require__.r(__webpack_exports__);
       var _this = this;
 
       var BaseApi = axios__WEBPACK_IMPORTED_MODULE_2___default().create({
-        baseURL: "http://localhost:8000/api"
+        baseURL: "http://event.uscmpc.com/api"
       });
       BaseApi.get("candidate-list").then(function (response) {
         console.log(response.data);
@@ -17997,7 +17997,7 @@ __webpack_require__.r(__webpack_exports__);
       var _this = this;
 
       var BaseApi = axios__WEBPACK_IMPORTED_MODULE_2___default().create({
-        baseURL: "http://localhost:8000/api"
+        baseURL: "http://event.uscmpc.com/api"
       });
       BaseApi.get("candidate-list").then(function (response) {
         console.log(response.data);
@@ -18008,7 +18008,7 @@ __webpack_require__.r(__webpack_exports__);
     },
     submit: function submit() {
       var BaseApi = axios__WEBPACK_IMPORTED_MODULE_2___default().create({
-        baseURL: "http://localhost:8000/api"
+        baseURL: "http://event.uscmpc.com/api"
       });
       BaseApi.post("cast-vote", {
         'candidates': this.chosenCandidates,
@@ -18178,7 +18178,7 @@ __webpack_require__.r(__webpack_exports__);
       var _this = this;
 
       var BaseApi = axios__WEBPACK_IMPORTED_MODULE_2___default().create({
-        baseURL: "http://localhost:8000/api"
+        baseURL: "http://event.uscmpc.com/api"
       });
       BaseApi.get("candidate-list").then(function (response) {
         console.log(response.data);
@@ -18189,7 +18189,7 @@ __webpack_require__.r(__webpack_exports__);
     },
     submit: function submit() {
       var BaseApi = axios__WEBPACK_IMPORTED_MODULE_2___default().create({
-        baseURL: "http://localhost:8000/api"
+        baseURL: "http://event.uscmpc.com/api"
       });
       BaseApi.post("cast-vote", {
         'candidates': this.chosenCandidates,
@@ -18853,7 +18853,7 @@ __webpack_require__.r(__webpack_exports__);
       var _this3 = this;
 
       var BaseApi = axios__WEBPACK_IMPORTED_MODULE_2___default().create({
-        baseURL: "http://localhost:8000/api"
+        baseURL: "http://event.uscmpc.com/api"
       });
       BaseApi.get("result").then(function (response) {
         console.log(response.data);
@@ -18959,7 +18959,7 @@ __webpack_require__.r(__webpack_exports__);
       var _this = this;
 
       var BaseApi = axios__WEBPACK_IMPORTED_MODULE_2___default().create({
-        baseURL: "http://localhost:8000/api"
+        baseURL: "http://event.uscmpc.com/api"
       });
       BaseApi.get("candidate-list").then(function (response) {
         console.log(response.data);
@@ -18970,7 +18970,7 @@ __webpack_require__.r(__webpack_exports__);
     },
     submit: function submit() {
       var BaseApi = axios__WEBPACK_IMPORTED_MODULE_2___default().create({
-        baseURL: "http://localhost:8000/api"
+        baseURL: "http://event.uscmpc.com/api"
       });
       BaseApi.post("cast-vote", {
         'candidates': this.chosenCandidates,
