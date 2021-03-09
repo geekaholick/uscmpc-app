@@ -1,7 +1,8 @@
 <template>
     <jet-authentication-card>
         <template #logo>
-            <jet-authentication-card-logo />
+<!--            <jet-authentication-card-logo />-->
+            <img src="/images/uscmpc-logo.png" alt="Logo" width="100"/>
         </template>
 
         <jet-validation-errors class="mb-4" />

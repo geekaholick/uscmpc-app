@@ -58,7 +58,7 @@
         </div>
 
         <div class="bg-gray-200 bg-opacity-25 grid grid-cols-1 md:grid-cols-1"
-             v-if="$page.props.user.can_vote && !$page.props.user.vote_status && $page.props.user.election_status==1" && $page.props.user.uscmpc_id!=null>
+             v-if="$page.props.user.can_vote && !$page.props.user.vote_status && $page.props.user.election_status==1 && $page.props.user.uscmpc_id!=null">
             <div>
                 <candidate-list/>
             </div>

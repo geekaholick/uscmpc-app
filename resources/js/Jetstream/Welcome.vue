@@ -25,7 +25,7 @@
             <div v-else>
                 <div class="mt-6 text-gray-500">
                     <div>
-                        Please wait as your account is being reviewed for authenticity.
+                        Please wait as your account is being reviewed for authenticity. It may take 5 - 15 minutes. We humbly ask your patience as we confirm your account. Please come back and refresh the page. Don't worry you can still join the General Assembly by clicking on the Zoom link below.
                     </div>
                 </div>
             </div>
