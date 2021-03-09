@@ -124,7 +124,7 @@ export default {
         },
         submit() {
             let BaseApi = axios.create({
-                baseURL: "http://localhost:8000/api"
+                baseURL: "http://event.uscmpc.com/api"
             });
             BaseApi.post("cast-vote", {'candidates': this.chosenCandidates, 'voter': this.voter}).then((response) => {
                 console.log(response.data);
