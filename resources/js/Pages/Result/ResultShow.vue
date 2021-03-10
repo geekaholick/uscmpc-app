@@ -22,10 +22,6 @@
                         </div>
                     </div>
                 </div>
-
-                <div class="mt-6 text-gray-500" v-else-if="$page.props.user.election_status>=1">
-                    Show current result here.
-                </div>
             </div>
         </div>
 
