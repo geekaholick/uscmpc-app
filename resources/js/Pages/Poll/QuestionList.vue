@@ -13,33 +13,13 @@
                     <span v-else>
                         Increasing the members of the Board of Directors from five (5) to SEVEN (7)
                     </span>
-
-
-
-
-
                 </div>
-
-                <!-- <jet-button v-if="!question.isActive" class="my-4 bg-gray-500" @click.prevent="toggleActive(index)">
-                    I Agree
-                </jet-button>
-                <jet-button v-else class="my-4 bg-gray-500" @click.prevent="toggleActive(index)">
-                    I Disagree
-                </jet-button> -->
-
-                    <!-- <div class="btn-group btn-group-lg">
-                        <jet-button class="my-4" @click="confirmUserVote">Agree</jet-button>
-                        <jet-button class="my-4" @click="confirmUserVote">Disagree</jet-button>
-                        <jet-button class="my-4" @click="confirmUserVote">Abstain</jet-button>
-                    </div> -->
-
-
                 <div >
                     <table class="ml-6 w-full" >
                         <tr class="text-left font-bold">
-                            <td><input :name="'a_' + index" type="radio" value="Agree" v-model="question.selected"/>Agree</td>
-                            <td><input :name="'a_' + index" type="radio" value="Disagree" v-model="question.selected"/>Disagree</td>
-                            <td><input :name="'a_' + index" type="radio" value="Abstain"  v-model="question.selected"/>Abstain</td>
+                            <td><input :name="'a_' + index" type="radio" value=0 v-model="question.selected"/>Agree</td>
+                            <td><input :name="'a_' + index" type="radio" value=1 v-model="question.selected"/>Disagree</td>
+                            <td><input :name="'a_' + index" type="radio" value=2 v-model="question.selected"/>Abstain</td>
                         </tr>
                     </table>
                 </div>
@@ -48,8 +28,6 @@
             </div>
         </div>
     </div>
-
-
     <div class="my-6 grid-cols-1 md:grid-cols-3" align="center" justify="center">
         <jet-button class="my-4" @click="confirmUserVote">
             SUBMIT
@@ -62,12 +40,17 @@
         </template>
 
         <template #content>
-            Are you sure you want to submit your vote? Once submited you will not be able to vote again.<br/>
-
-
+            Are you sure you want to submit your vote? Once submited you will not be able to vote again.<br/><br/>
             Summary of Choices:<br/>
-            First Amendment  : <span class="lg:font-bold underline "> {{ questions[0].selected }} </span><br/>
-            Second Amendment : <span class="lg:font-bold underline "> {{ questions[1].selected }} </span>
+            First Amendment  : <span class="lg:font-bold underline "> <span v-if="questions[0].selected==0" >Agree</span>
+                                                                      <span v-else-if="questions[0].selected==1" >Disagree</span>
+                                                                      <span v-else="questions[0].selected==2" >Abstain</span>
+                               </span><br/>
+            Second Amendment : <span class="lg:font-bold underline "> <span v-if="questions[1].selected==0" >Agree</span>
+                                                                      <span v-else-if="questions[1].selected==1" >Disagree</span>
+                                                                      <span v-else="questions[1].selected==2" >Abstain</span>
+                               </span>
+
 
         </template>
 
@@ -97,9 +80,9 @@ export default {
     data() {
         return {
             questions: [{ question:"Renaming of USC Multi-Purpose Cooperative to USC AND COMMUNITY MULTI-PURPOSE COOPERATIVE",
-                          selected: "Agree"},
+                          selected: 0},
                         { question: "Increasing the members of the Board of Directors from five (5) to SEVEN (7)",
-                          selected: "Agree"},
+                          selected: 0},
                        ],
             count: 0,
             voter: null,
@@ -116,14 +99,14 @@ export default {
 
         submit() {
             let BaseApi = axios.create({
-                baseURL: "http://event.uscmpc.com/api"
+                baseURL: "http://localhost:8000/api"
             });
-            BaseApi.post("cast-vote", {'candidates': this.chosenCandidates, 'voter': this.voter}).then((response) => {
+            BaseApi.post("cast-poll", {'questions': this.questions, 'voter': this.voter}).then((response) => {
                 console.log(response.data);
                 window.location.reload();
             })
                 .catch((error) => {
-                    console.log("error")
+                    console.log(error)
                 })
         },
         confirmUserVote() {

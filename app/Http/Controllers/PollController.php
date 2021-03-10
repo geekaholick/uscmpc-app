@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
+use Illuminate\Database\Eloquent\Model;
 use Illuminate\Http\Request;
+use App\Models\Poll;
 
 class PollController extends Controller
 {
@@ -29,56 +32,72 @@ class PollController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
     {
-        //
+        $poll = new Poll([
+            'user_id' => $request->input('voter'),
+            'q1' => $request->input('questions')[0]['selected'],
+            'q2' => $request->input('questions')[1]['selected'],
+        ]);
+        $poll->save();
+
+        $user = User::find($request->input('voter'));
+        $user->poll_status = 1;
+        $user->save();
+
+        return "okay";
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
-    }
+/**
+ * Display the specified resource.
+ *
+ * @param int $id
+ * @return \Illuminate\Http\Response
+ */
+public
+function show($id)
+{
+    //
+}
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
-    }
+/**
+ * Show the form for editing the specified resource.
+ *
+ * @param int $id
+ * @return \Illuminate\Http\Response
+ */
+public
+function edit($id)
+{
+    //
+}
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        //
-    }
+/**
+ * Update the specified resource in storage.
+ *
+ * @param \Illuminate\Http\Request $request
+ * @param int $id
+ * @return \Illuminate\Http\Response
+ */
+public
+function update(Request $request, $id)
+{
+    //
+}
+
+/**
+ * Remove the specified resource from storage.
+ *
+ * @param int $id
+ * @return \Illuminate\Http\Response
+ */
+public
+function destroy($id)
+{
+    //
+}
 }
