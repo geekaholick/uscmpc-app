@@ -39,10 +39,15 @@
                                 <path
                                     d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path>
                             </svg>
-                            <div class="ml-4 text-2xl 2xl:leading-8 font-bold">
-                                <span >University of San Carlos Multi-Purpose Cooperative</span> <br/>
-                                54th General Assembly<br/>
-                                March 14, 2021 SUNDAY @ 09:30 AM
+                            <div class="ml-4 ">
+                                <span class="text-2xl 2xl:leading-8 font-bold">University of San Carlos Multi-Purpose Cooperative</span> <br/>
+                                <span class="text-xl xl:leading-8 font-bold">54th General Assembly<br/>
+                                    March 14, 2021 SUNDAY @ 09:30 AM</span><br/>
+                                <span class="text-sm text-green-400 text-2xl 2xl:leading-8 font-bold">
+                                <inertia-link v-if="canRegister" :href="route('register')"
+                                              class="">
+                                   Please register for the event here
+                                </inertia-link></span>
                             </div>
                         </div>
 
@@ -59,7 +64,7 @@
                     <div class="p-6">
                         <div class="items-center">
                             <div class="text-center text-lg text-gray-500 sm:text-right sm:ml-0">
-                               Candidates of the USC MPC Board of Directors
+                                Candidates of the USC MPC Board of Directors
                             </div>
                         </div>
                     </div>
@@ -112,30 +117,31 @@
                                     Log in
                                 </inertia-link>
 
-                                <inertia-link v-if="canRegister" :href="route('register')" class="ml-4 text-sm text-gray-700">
+                                <inertia-link v-if="canRegister" :href="route('register')"
+                                              class="ml-4 text-sm text-gray-700">
                                     Register
                                 </inertia-link>
                             </template>
                         </div>
-<!--                        <svg fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"-->
-<!--                             viewBox="0 0 24 24" stroke="currentColor" class="-mt-px w-5 h-5 text-gray-400">-->
-<!--                            <path-->
-<!--                                d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"></path>-->
-<!--                        </svg>-->
+                        <!--                        <svg fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"-->
+                        <!--                             viewBox="0 0 24 24" stroke="currentColor" class="-mt-px w-5 h-5 text-gray-400">-->
+                        <!--                            <path-->
+                        <!--                                d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"></path>-->
+                        <!--                        </svg>-->
 
-<!--                        <a href="https://laravel.bigcartel.com" class="ml-1 underline">-->
-<!--                            Shop-->
-<!--                        </a>-->
+                        <!--                        <a href="https://laravel.bigcartel.com" class="ml-1 underline">-->
+                        <!--                            Shop-->
+                        <!--                        </a>-->
 
-<!--                        <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"-->
-<!--                             stroke-width="2" viewBox="0 0 24 24" class="ml-4 -mt-px w-5 h-5 text-gray-400">-->
-<!--                            <path-->
-<!--                                d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>-->
-<!--                        </svg>-->
+                        <!--                        <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"-->
+                        <!--                             stroke-width="2" viewBox="0 0 24 24" class="ml-4 -mt-px w-5 h-5 text-gray-400">-->
+                        <!--                            <path-->
+                        <!--                                d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>-->
+                        <!--                        </svg>-->
 
-<!--                        <a href="https://github.com/sponsors/taylorotwell" class="ml-1 underline">-->
-<!--                            Sponsor-->
-<!--                        </a>-->
+                        <!--                        <a href="https://github.com/sponsors/taylorotwell" class="ml-1 underline">-->
+                        <!--                            Sponsor-->
+                        <!--                        </a>-->
                     </div>
                 </div>
 
