@@ -5,6 +5,8 @@ use Illuminate\Support\Facades\Route;
 use App\Actions\Fortify\CreateNewUser;
 use App\Http\Controllers\CandidateController;
 use App\Http\Controllers\ElectionController;
+use App\Http\Controllers\PollController;
+
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -26,3 +28,4 @@ Route::get('/test', [CandidateController::class, 'list']);
 //Routes for vote
 Route::get('/candidate-list', [CandidateController::class, 'list']);
 Route::post('/cast-vote', [ElectionController::class, 'store']);
+Route::post('/cast-poll', [PollController::class, 'store']);
