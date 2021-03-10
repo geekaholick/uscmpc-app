@@ -18,14 +18,19 @@
                     </div>
 
                     <div v-else>
-                        Sorry to inform you that you're <span class="lg:font-bold">NOT ELIGIBLE</span> for voting in the election for the board of directors.
+                        Sorry to inform you that you're <span class="lg:font-bold">NOT ELIGIBLE</span> for voting in the election for the board of directors. <br/>
+                        If you have questions, please don't hesitate to contact the office.<br/>
+                        Contact Email: usc_mpc@yahoo.com <br/>
+                        Alternate Email: official.uscmpc@gmail.com<br/>
+                        Contact Number: (032)384 0024<br/>
+                        Contact Person: Maria Conception Gaviola
                     </div>
                 </div>
             </div>
             <div v-else>
                 <div class="mt-6 text-gray-500">
                     <div>
-                        Please wait as your account is being reviewed. It may take 5 - 15 minutes. We humbly ask your patience as we confirm your account. Please come back and refresh the page. Don't worry you can still join the General Assembly by clicking on the Zoom link below.
+                        Please wait as your account is being reviewed. It may take 5 - 15 minutes. We humbly ask your patience as we confirm your account. Don't worry you can still join the 54th General Assembly by clicking on the Zoom link below.
                     </div>
                 </div>
             </div>
@@ -52,8 +57,8 @@
                     <div class="mt-2 text-sm text-gray-500">
                         Election Schedule:
                         <div class="list-none pl-7 font-bold">
-                            <li>Open  -> 10:30 AM</li>
-                            <li>Close -> 11:30 AM</li>
+                            <li>Open around 10:30 AM by the signal of the Election Committee</li>
+                            <li>Close around 11:30 AM</li>
                         </div>
 
                     </div>

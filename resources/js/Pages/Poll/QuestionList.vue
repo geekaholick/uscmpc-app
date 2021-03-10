@@ -1,35 +1,58 @@
 <template>
-    <div class="bg-gray-200 bg-opacity-25 grid grid-cols-1 md:grid-cols-4" :set="voter=$page.props.user.id">
-        <div v-for="(candidate, index) in candidates">
-            <div class="p-6 border-gray-900" align="center" justify="center"
-                 v-bind:class="{ active: candidate.isActive }">
+    <div class="bg-gray-200 bg-opacity-25 grid grid-cols-1 md:grid-cols-1" :set="voter=$page.props.user.id">
+        <div v-for="(question, index) in questions" :key="index">
+            <div class="p-6 border-gray-900" justify="left"
+                 v-bind:class="{ active: question.isActive }">
 
-                <div class="text-lg text-gray-600 font-bold">
-                    {{ candidate.last_name }}, {{ candidate.first_name }}
+                <div class="px-6 text-lg text-gray-600 font-bold">
+                    <!-- {{ question.question }} -->
+
+                    <span v-if="index==0" >
+                        Renaming of USC Multi-Purpose Cooperative to <span class="underline bg-yellow-300">USC AND COMMUNITY</span> Multi-Purpose Cooperative
+                    </span>
+                    <span v-else>
+                        Increasing the members of the Board of Directors from five (5) to SEVEN (7)
+                    </span>
+
+
+
+
+
                 </div>
 
-                <div class="m-4" v-if="candidate.profile_photo_path != null">
-                    <img :src="candidate.profile_photo_path" :alt="candidate.first_name"
-                         class="rounded-full h-36 w-36 object-cover">
-                </div>
-                <div class="m-4" v-else>
-                    <img class="rounded-full h-36 w-36 object-cover">
-                </div>
-
-                <jet-button v-if="!candidate.isActive" class="m-4 bg-gray-500" @click.prevent="toggleActive(index)">
-                    Select
+                <!-- <jet-button v-if="!question.isActive" class="my-4 bg-gray-500" @click.prevent="toggleActive(index)">
+                    I Agree
                 </jet-button>
-                <jet-button v-else class="m-4 bg-gray-500" @click.prevent="toggleActive(index)">
-                    Unselect
-                </jet-button>
+                <jet-button v-else class="my-4 bg-gray-500" @click.prevent="toggleActive(index)">
+                    I Disagree
+                </jet-button> -->
+
+                    <!-- <div class="btn-group btn-group-lg">
+                        <jet-button class="my-4" @click="confirmUserVote">Agree</jet-button>
+                        <jet-button class="my-4" @click="confirmUserVote">Disagree</jet-button>
+                        <jet-button class="my-4" @click="confirmUserVote">Abstain</jet-button>
+                    </div> -->
+
+
+                <div >
+                    <table class="ml-6 w-full" >
+                        <tr class="text-left font-bold">
+                            <td><input :name="'a_' + index" type="radio" value="Agree" v-model="question.selected"/>Agree</td>
+                            <td><input :name="'a_' + index" type="radio" value="Disagree" v-model="question.selected"/>Disagree</td>
+                            <td><input :name="'a_' + index" type="radio" value="Abstain"  v-model="question.selected"/>Abstain</td>
+                        </tr>
+                    </table>
+                </div>
+
 
             </div>
         </div>
     </div>
 
-    <div class="p-6 grid-cols-1 md:grid-cols-3" align="center" justify="center">
-        <jet-button class="ml-4" @click="confirmUserVote">
-            CAST VOTE
+
+    <div class="my-6 grid-cols-1 md:grid-cols-3" align="center" justify="center">
+        <jet-button class="my-4" @click="confirmUserVote">
+            SUBMIT
         </jet-button>
     </div>
 
@@ -39,16 +62,12 @@
         </template>
 
         <template #content>
-            Are you sure you want to cast your vote? Once your casted you will not be able to vote again.<br/>
-            <span v-if="count>0">
-                You have selected the following:
-                <div class="list-disc pl-2" v-for="name in chosenCandidatesName">
-                    <li>{{ name }}</li>
-                </div>
-            </span>
-            <span v-else>
-                You have not selected any of the candidates.
-            </span>
+            Are you sure you want to submit your vote? Once submited you will not be able to vote again.<br/>
+
+
+            Summary of Choices:<br/>
+            First Amendment  : <span class="lg:font-bold underline "> {{ questions[0].selected }} </span><br/>
+            Second Amendment : <span class="lg:font-bold underline "> {{ questions[1].selected }} </span>
 
         </template>
 
@@ -77,51 +96,24 @@ export default {
     },
     data() {
         return {
-            candidates: [],
+            questions: [{ question:"Renaming of USC Multi-Purpose Cooperative to USC AND COMMUNITY MULTI-PURPOSE COOPERATIVE",
+                          selected: "Agree"},
+                        { question: "Increasing the members of the Board of Directors from five (5) to SEVEN (7)",
+                          selected: "Agree"},
+                       ],
             count: 0,
-            chosenCandidates: [],
-            chosenCandidatesName: [],
             voter: null,
             confirmingUserVote: false,
             form: null
         }
     },
-    created() {
-        this.list();
-    },
+
     methods: {
         toggleActive(index) {
-            if (this.count < 3 || this.candidates[index].isActive) {
-                if (this.candidates[index].isActive) {
-                    let x = this.chosenCandidates.indexOf(this.candidates[index].user_id);
-                    let y = this.chosenCandidatesName.indexOf(this.candidates[index].first_name + " " + this.candidates[index].last_name);
-                    if (x > -1) {
-                        this.chosenCandidates.splice(x, 1);
-                        this.chosenCandidatesName.splice(y, 1);
-                    }
-                    this.count--;
-                } else {
-                    this.chosenCandidates.push(this.candidates[index].user_id);
-                    this.chosenCandidatesName.push(this.candidates[index].first_name + " " + this.candidates[index].last_name);
-                    this.count++;
-                }
-                this.candidates[index].isActive = !this.candidates[index].isActive;
-            }
-            console.log(this.chosenCandidates);
+            this.questions[index].isActive = !this.questions[index].isActive;
+        console.log(this.questions);
         },
-        list() {
-            let BaseApi = axios.create({
-                baseURL: "http://event.uscmpc.com/api"
-            });
-            BaseApi.get("candidate-list").then((response) => {
-                console.log(response.data);
-                this.candidates = response.data;
-            })
-                .catch((error) => {
-                    console.log("error")
-                })
 
-        },
         submit() {
             let BaseApi = axios.create({
                 baseURL: "http://event.uscmpc.com/api"
