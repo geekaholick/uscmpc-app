@@ -1,6 +1,6 @@
 <template>
-    <div class="bg-gray-200 bg-opacity-25 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4" :set="voter=$page.props.user.id">
-        <div v-for="(candidate, index) in candidates">
+    <div class="bg-gray-200 bg-opacity-25 grid grid-cols-1 md:grid-cols-4" :set="voter=$page.props.user.id">
+        <div v-for="(candidate, index) in candidates" :key="index">
             <div class="p-6 border-gray-900" align="center" justify="center"
                  v-bind:class="{ active: candidate.isActive }">
 
