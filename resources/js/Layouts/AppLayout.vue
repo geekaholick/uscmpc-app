@@ -11,8 +11,7 @@
                             <!-- Logo -->
                             <div class="flex-shrink-0 flex items-center">
                                 <inertia-link :href="route('dashboard')">
-                                    <!--                                    <jet-application-mark class="block h-9 w-auto" />-->
-                                    <img src="/images/uscmpc-logo.png" alt="Logo" class="block h-9 w-auto"/>
+                                    <jet-application-mark class="block h-9 w-auto" />
                                 </inertia-link>
                             </div>
 
@@ -32,7 +31,7 @@
                                     Result
                                 </jet-nav-link>
                                 <jet-nav-link :href="route('member')" :active="route().current('member')"
-                                              v-if="$page.props.user.type==5 || $page.props.user.type==1">
+                                              v-if="$page.props.user.type==1">
                                     Member
                                 </jet-nav-link>
                                 <jet-nav-link :href="route('control')" :active="route().current('control')"
@@ -115,7 +114,8 @@
                             <div class="ml-3 relative">
                                 <jet-dropdown align="right" width="48">
                                     <template #trigger>
-                                        <button v-if="$page.props.jetstream.managesProfilePhotos"
+<!--                                        $page.props.jetstream.managesProfilePhotos-->
+                                        <button v-if="false"
                                                 class="flex text-sm border-2 border-transparent rounded-full focus:outline-none focus:border-gray-300 transition duration-150 ease-in-out">
                                             <img class="h-8 w-8 rounded-full object-cover"
                                                  :src="$page.props.user.profile_photo_url"
@@ -125,7 +125,7 @@
                                         <span v-else class="inline-flex rounded-md">
                                             <button type="button"
                                                     class="inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md text-gray-500 bg-white hover:text-gray-700 focus:outline-none transition ease-in-out duration-150">
-                                                {{ $page.props.user.first_name }} {{ $page.props.user.last_name }}
+                                                {{ $page.props.user.first_name }}
 
                                                 <svg class="ml-2 -mr-0.5 h-4 w-4" xmlns="http://www.w3.org/2000/svg"
                                                      viewBox="0 0 20 20" fill="currentColor">
@@ -190,6 +190,24 @@
                     <div class="pt-2 pb-3 space-y-1">
                         <jet-responsive-nav-link :href="route('dashboard')" :active="route().current('dashboard')">
                             Dashboard
+                        </jet-responsive-nav-link>
+                        <jet-responsive-nav-link :href="route('election')" :active="route().current('election')">
+                            Election
+                        </jet-responsive-nav-link>
+                        <jet-responsive-nav-link :href="route('poll')" :active="route().current('poll')">
+                            Poll
+                        </jet-responsive-nav-link>
+                        <jet-responsive-nav-link :href="route('result')" :active="route().current('result')"
+                                      v-if="$page.props.user.type==5 || $page.props.user.type==1">
+                            Result
+                        </jet-responsive-nav-link>
+                        <jet-responsive-nav-link :href="route('member')" :active="route().current('member')"
+                                      v-if="$page.props.user.type==1">
+                            Member
+                        </jet-responsive-nav-link>
+                        <jet-responsive-nav-link :href="route('control')" :active="route().current('control')"
+                                      v-if="$page.props.user.type==1">
+                            Control
                         </jet-responsive-nav-link>
                     </div>
 

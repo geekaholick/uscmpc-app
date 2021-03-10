@@ -1,18 +1,18 @@
 <template>
     <div
         class="relative flex items-top justify-center min-h-screen bg-gray-100 dark:bg-gray-900 sm:items-center sm:pt-0">
-        <div v-if="canLogin" class="hidden fixed top-0 right-0 px-6 py-4 sm:block">
+        <div v-if="canLogin" class="fixed top-0 right-0 px-6 py-4 sm:block">
             <inertia-link v-if="$page.props.user" href="/dashboard" class="text-sm text-gray-700 underline">
-                <span class="text-2xl">Dashboard</span>
+                <span class="text-l">Dashboard</span>
             </inertia-link>
 
             <template v-else>
                 <inertia-link :href="route('login')" class="text-sm text-gray-700 underline">
-                    <span class="text-2xl">Log in</span>
+                    <span class="text-l">Log in</span>
                 </inertia-link>
 
                 <inertia-link v-if="canRegister" :href="route('register')" class="ml-4 text-sm text-gray-700 underline">
-                    <span class="text-2xl">Register</span>
+                    <span class="text-l">Register</span>
                 </inertia-link>
             </template>
         </div>
@@ -41,8 +41,8 @@
                             </svg>
                             <div class="ml-4 text-2xl 2xl:leading-8 font-bold">
                                 <span >University of San Carlos Multi-Purpose Cooperative</span> <br/>
-                                General Assembly 2021 <br/>
-                                March 14, 2021 @ 09:30 AM
+                                54th General Assembly<br/>
+                                March 14, 2021 SUNDAY @ 09:30 AM
                             </div>
                         </div>
 
@@ -140,7 +140,7 @@
                 </div>
 
                 <div class="ml-4 text-center text-sm text-gray-500 sm:text-right sm:ml-0">
-                    Powered by USC MPC Tech Team
+                    Powered by USC MPC TT
                 </div>
             </div>
         </div>

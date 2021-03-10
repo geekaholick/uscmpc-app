@@ -1,5 +1,5 @@
 <template>
-    <div class="bg-gray-200 bg-opacity-25 grid grid-cols-1 md:grid-cols-4" :set="voter=$page.props.user.id">
+    <div class="bg-gray-200 bg-opacity-25 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4" :set="voter=$page.props.user.id">
         <div v-for="(candidate, index) in candidates">
             <div class="p-6 border-gray-900" align="center" justify="center"
                  v-bind:class="{ active: candidate.isActive }">
@@ -19,7 +19,7 @@
                 <jet-button v-if="!candidate.isActive" class="m-4 bg-gray-500" @click.prevent="toggleActive(index)">
                     Select
                 </jet-button>
-                <jet-button v-else class="m-4 bg-gray-500" @click.prevent="toggleActive(index)">
+                <jet-button v-else class="m-4 bg-gray-500 bg-" @click.prevent="toggleActive(index)">
                     Unselect
                 </jet-button>
 
@@ -28,7 +28,7 @@
     </div>
 
     <div class="p-6 grid-cols-1 md:grid-cols-3" align="center" justify="center">
-        <jet-button class="ml-4" @click="confirmUserVote">
+        <jet-button class="ml-4 under" @click="confirmUserVote">
             CAST VOTE
         </jet-button>
     </div>
@@ -39,7 +39,7 @@
         </template>
 
         <template #content>
-            Are you sure you want to cast your vote? Once your casted you will not be able to vote again.<br/>
+            Are you sure you want to cast your vote? Once cast, you will not be able to vote again.<br/>
             <span v-if="count>0">
                 You have selected the following:
                 <div class="list-disc pl-2" v-for="name in chosenCandidatesName">
@@ -59,6 +59,22 @@
 
             <jet-button class="ml-2" @click="castVote">
                 Confirm
+            </jet-button>
+        </template>
+    </jet-dialog-modal>
+
+    <jet-dialog-modal :show="limitCandidate" @close="closeModal">
+        <template #title>
+            Candidate Limit Warning.
+        </template>
+
+        <template #content>
+            You can only select a maximum of 3 candidates.<br/>
+        </template>
+
+        <template #footer>
+            <jet-button class="ml-2" @click="closeModal">
+                Ok
             </jet-button>
         </template>
     </jet-dialog-modal>
@@ -83,6 +99,7 @@ export default {
             chosenCandidatesName: [],
             voter: null,
             confirmingUserVote: false,
+            limitCandidate: false,
             form: null
         }
     },
@@ -106,7 +123,10 @@ export default {
                     this.count++;
                 }
                 this.candidates[index].isActive = !this.candidates[index].isActive;
+            } else {
+                this.maxCandidate();
             }
+
             console.log(this.chosenCandidates);
         },
         list() {
@@ -137,8 +157,12 @@ export default {
         confirmUserVote() {
             this.confirmingUserVote = true;
         },
+        maxCandidate() {
+            this.limitCandidate = true;
+        },
         closeModal() {
             this.confirmingUserVote = false;
+            this.limitCandidate = false;
         },
         castVote() {
             this.submit();
@@ -152,7 +176,7 @@ export default {
 .active {
     color: #00424b;
     background: #ffc31f;
-    border: darkgreen;
+    border: #10d410;
     border-style: solid;
 }
 </style>

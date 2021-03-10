@@ -43,6 +43,13 @@
 
             <!-- Title -->
             <div class="col-span-6 sm:col-span-4">
+                <jet-label for="uscmpc_id" value="USC MPC ID" />
+                <jet-input id="uscmpc_id" type="text" disabled=true class="mt-1 block w-full bg-gray-300" v-model="form.uscmpc_id" autocomplete="title" />
+                <jet-input-error :message="form.errors.uscmpc_id" class="mt-2" />
+            </div>
+
+            <!-- Title -->
+            <div class="col-span-6 sm:col-span-4">
                 <jet-label for="title" value="Title" />
                 <jet-input id="title" type="text" class="mt-1 block" v-model="form.title" autocomplete="title" />
                 <jet-input-error :message="form.errors.title" class="mt-2" />
@@ -74,6 +81,13 @@
                 <jet-label for="membership" value="Membership Type" />
                 <jet-input id="membership" type="text" disabled="true" class="mt-1 block w-full bg-gray-300" v-model="form.membership" autocomplete="membership" />
                 <jet-input-error :message="form.errors.membership" class="mt-2" />
+            </div>
+
+            <!-- Membership Type -->
+            <div class="col-span-6 sm:col-span-4">
+                <jet-label for="membership_date" value="Date of Membership" />
+                <jet-input id="membership_date" type="text" disabled="true" class="mt-1 block w-full bg-gray-300" v-model="form.membereship_date" autocomplete="membership_date" />
+                <jet-input-error :message="form.errors.membership_date" class="mt-2" />
             </div>
 
             <!-- Email -->
@@ -123,11 +137,13 @@
             return {
                 form: this.$inertia.form({
                     _method: 'PUT',
+                    uscmpc_id: this.user.uscmpc_id.substr(0,2)+"-"+this.user.uscmpc_id.substr(2,2)+"-"+this.user.uscmpc_id.substr(4,4),
                     title: this.user.title,
                     first_name: this.user.first_name,
                     middle_name: this.user.middle_name,
                     last_name: this.user.last_name,
                     membership: this.user.membership,
+                    membership_date: this.user.membership_date,
                     email: this.user.email,
                     photo: null,
                 }),
