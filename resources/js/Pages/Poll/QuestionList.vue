@@ -69,19 +69,6 @@
             First Amendment  : <span class="lg:font-bold underline "> {{ questions[0].selected }} </span><br/>
             Second Amendment : <span class="lg:font-bold underline "> {{ questions[1].selected }} </span>
 
-            <!-- <span v-if="questions[0].selected=='Agree' && questions[1].isActive==false" >
-                You have agreed to the FIRST amendment.
-            </span>
-            <span v-else-if="questions[0].isActive==false && questions[1].isActive==true">
-                You have agreed to the SECOND amendment.
-            </span>
-            <span v-else-if="questions[0].isActive==true && questions[1].isActive==true">
-                You have agreed to BOTH amendments.
-            </span>
-            <span v-else>
-                You have disagreed to BOTH amendments.
-            </span> -->
-
         </template>
 
         <template #footer>

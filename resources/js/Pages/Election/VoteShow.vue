@@ -18,7 +18,7 @@
                         election committee.<br/>
                         Election Schedule:
                         <div class="list-none pl-7 font-bold">
-                            <li>Open -> 10:30 AM</li>
+                            <li>Open around 10:30 AM by the Election Committee</li>
                             <li>Close -> 11:30 AM</li>
                         </div>
                     </div>
