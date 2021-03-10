@@ -7,9 +7,14 @@
         <jet-validation-errors class="mb-4" />
 
         <form @submit.prevent="submit">
-            <div>
+            <div class="mt-4">
                 <jet-label for="title" value="Title" />
-                <jet-input id="title" type="text" class="mt-1 block w-full" v-model="form.title" autofocus autocomplete="title" />
+                <!-- <jet-input id="title" type="text" class="mt-1 block w-full" v-model="form.title" autofocus autocomplete="title" /> -->
+                <select id="title" class="mt-1 block w-full" v-model="form.title" required autofocus autocomplete="title" style="border-radius: 5px; border: 1px solid #e2e4e7;">
+                    <option value="Mr">Mr</option>
+                    <option value="Ms">Ms</option>
+                </select>
+
             </div>
 
             <div class="mt-4">
@@ -91,6 +96,16 @@
 
         data() {
             return {
+                selected: null,
+        options: [
+          { value: null, text: 'Please select an option' },
+          { value: 'a', text: 'This is First option' },
+          { value: 'b', text: 'Selected Option' },
+          { value: { C: '3PO' }, text: 'This is an option with object value' },
+          { value: 'd', text: 'This one is disabled', disabled: true }
+        ],
+                
+                
                 form: this.$inertia.form({
                     title: '',
                     first_name: '',
@@ -103,10 +118,15 @@
                 }),
                 titles:[
                     {
-                        options:["", "Mr", "Ms", "Sir", "Ma'am"],
+                        options:[
+                            {value:'Mr', text:'Mr'},
+                            {value:'Ms', text:'Ms'}
+                        ],
                         selectedOption: ""
                     }
                 ]
+
+
             }
         },
 

@@ -6,6 +6,8 @@ use App\Actions\Fortify\CreateNewUser;
 use App\Http\Controllers\CandidateController;
 use App\Http\Controllers\ElectionController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\PollController;
+
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -29,3 +31,4 @@ Route::get('/candidate-list', [CandidateController::class, 'list']);
 Route::get('/count', [UserController::class, 'getCountStatistics']);
 Route::get('/result', [ElectionController::class, 'getResults']);
 Route::post('/cast-vote', [ElectionController::class, 'store']);
+Route::post('/cast-poll', [PollController::class, 'store']);

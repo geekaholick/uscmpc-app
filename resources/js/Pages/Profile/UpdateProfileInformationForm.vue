@@ -51,8 +51,14 @@
             <!-- Title -->
             <div class="col-span-6 sm:col-span-4">
                 <jet-label for="title" value="Title" />
-                <jet-input id="title" type="text" class="mt-1 block" v-model="form.title" autocomplete="title" />
-                <jet-input-error :message="form.errors.title" class="mt-2" />
+                <!-- <jet-input id="title" type="text" class="mt-1 block" v-model="form.title" autocomplete="title" />
+                <jet-input-error :message="form.errors.title" class="mt-2" /> -->
+                <select id="title" class="mt-1 block" v-model="form.title" autofocus autocomplete="title" style="border-radius: 5px; border: 1px solid #e2e4e7;">
+                    <option value="Mr">Mr</option>
+                    <option value="Ms">Ms</option>
+                </select>
+
+
             </div>
 
             <!-- First Name -->
