@@ -1,10 +1,6 @@
 <template>
     <div>
         <div class="p-6 sm:px-20 bg-white border-b border-gray-200">
-<!--            <div>-->
-<!--                <jet-application-logo class="block h-12 w-auto" />-->
-<!--            </div>-->
-
             <div class="mt-8 text-2xl">
                 Hello <span class="font-bold">{{ $page.props.user.title }}
                 {{ $page.props.user.first_name }}
@@ -30,7 +26,7 @@
             <div v-else>
                 <div class="mt-6 text-gray-500">
                     <div>
-                        Please wait as your account is being reviewed. It may take 5 - 15 minutes. We humbly ask your patience as we confirm your account. Don't worry you can still join the 54th General Assembly by clicking on the Zoom link below.
+                        Please wait as your account is being reviewed. It may take 5 - 15 minutes. We humbly ask your patience as we confirm your account. Don't worry you can still join the 58th General Assembly by clicking on the Zoom link below.
                     </div>
                 </div>
             </div>
@@ -126,7 +122,7 @@
         </div>
     </div>
 </template>
-
+n
 <script>
     import JetApplicationLogo from '@/Jetstream/ApplicationLogo'
 
