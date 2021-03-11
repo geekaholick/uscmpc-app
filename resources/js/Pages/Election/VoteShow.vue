@@ -34,7 +34,11 @@
                     <div v-else-if="$page.props.user.can_vote && $page.props.user.vote_status">
                         Thank you for exercising your right to vote. The election committee will announce the winner before
                         the end of the General Assembly.<br/>
-                        Please participate also in the poll.
+                        <div v-if="!$page.props.user.poll_status">
+                            <jet-nav-link :href="route('poll')" :active="route().current('poll')" class="text-sm text-green-400 text-xl xl:leading-8 font-bold">
+                                Click here to participate the poll.
+                            </jet-nav-link>
+                        </div>
                     </div>
 
                     <div v-else>
@@ -70,12 +74,14 @@
 import JetApplicationLogo from '@/Jetstream/ApplicationLogo'
 import CandidateList from "./CandidateList";
 import DangerButton from "../../Jetstream/DangerButton";
+import JetNavLink from '@/Jetstream/NavLink';
 
 export default {
     components: {
         DangerButton,
         JetApplicationLogo,
-        CandidateList
+        CandidateList,
+        JetNavLink
     },
 }
 </script>
