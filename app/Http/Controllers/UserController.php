@@ -65,12 +65,11 @@ class UserController extends Controller
      * Update the specified resource in storage.
      *
      * @param \Illuminate\Http\Request $request
-     * @param int $id
      * @return \Illuminate\Http\Response
      */
-    public function validateCanVote(Request $request)
+    public function validateCanVote(Request $request, $id)
     {
-        $user = User::find($request->input('id'));
+        $user = User::find($id);
         $member = Member::where('first_name', '=', $user->first_name)
             ->where('last_name', '=', $user->last_name)->get();
 
@@ -85,11 +84,12 @@ class UserController extends Controller
         }else{
             return "Member not found!!";
         }
+//        return Member::all();
     }
 
-    public function validateCannotVote(Request $request)
+    public function validateCannotVote(Request $request, $id)
     {
-        $user = User::find($request->input('id'));
+        $user = User::find($id);
         $member = Member::where('first_name', '=', $user->first_name)
             ->where('last_name', '=', $user->last_name)->get();
 
