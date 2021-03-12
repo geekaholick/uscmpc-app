@@ -11,7 +11,7 @@
                         Renaming of USC Multi-Purpose Cooperative to <span class="underline bg-yellow-300">USC AND COMMUNITY</span> Multi-Purpose Cooperative
                     </span>
                     <span v-else>
-                        Increasing the members of the Board of Directors from five (5) to SEVEN (7)
+                        Increasing the members of the Board of Directors from five (5) to <span class="underline bg-yellow-300">SEVEN (7)</span>
                     </span>
                 </div>
                 <div >
