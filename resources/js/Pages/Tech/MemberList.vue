@@ -131,7 +131,7 @@ export default {
             let BaseApi = axios.create({
                 baseURL: "http://event.uscmpc.com/api"
             });
-            BaseApi.post("can-vote", {'id': this.current_member_id}).then((response) => {
+            BaseApi.post("can-vote/"+this.current_member_id).then((response) => {
                 console.log(response.data);
                 window.location.reload();
             })
@@ -144,7 +144,7 @@ export default {
             let BaseApi = axios.create({
                 baseURL: "http://event.uscmpc.com/api"
             });
-            BaseApi.post("cannot-vote", {'id': this.current_member_id}).then((response) => {
+            BaseApi.post("cannot-vote/"+this.current_member_id).then((response) => {
                 console.log(response.data);
                 window.location.reload();
             })

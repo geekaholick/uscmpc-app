@@ -55,7 +55,11 @@
                     <div>
                         Thank you for exercising your right to vote. The election has ended. The election committee will
                         announce the winner before the end of the USC MPC General Assembly 2021.<br/>
-                        If you have not yet participated in the poll, please answer them in the poll section.
+                        <div v-if="!$page.props.user.poll_status">
+                            <jet-nav-link :href="route('poll')" :active="route().current('poll')" class="text-sm text-green-400 text-xl xl:leading-8 font-bold">
+                                Click here to participate the poll.
+                            </jet-nav-link>
+                        </div>
                     </div>
                 </div>
             </div>

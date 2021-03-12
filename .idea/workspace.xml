@@ -3,8 +3,11 @@
   <component name="ChangeListManager">
     <list default="true" id="54c67983-f201-467a-b8a2-aa792b7a51e2" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/UserController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/UserController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/Pages/Poll/QuestionList.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/Pages/Poll/QuestionList.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/Pages/Election/VoteShow.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/Pages/Election/VoteShow.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/Pages/Tech/MemberList.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/Pages/Tech/MemberList.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -211,7 +214,7 @@
       <workItem from="1615469980953" duration="2076000" />
       <workItem from="1615472277515" duration="9361000" />
       <workItem from="1615508137190" duration="4409000" />
-      <workItem from="1615516629603" duration="5854000" />
+      <workItem from="1615516629603" duration="11938000" />
     </task>
     <servers />
   </component>
