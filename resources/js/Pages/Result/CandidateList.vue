@@ -1,7 +1,41 @@
 <template>
-    <div class="p-4 bg-gray-200 bg-opacity-25 grid grid-cols-1 md:grid-cols-1" :set="voter=$page.props.user.id">
-        Current Casted Votes: {{ countStatistics.voted }}<br/>
-        Total Qualified Voters: {{ countStatistics.voters }}
+    <div class="p-4 bg-gray-500 bg-opacity-25 grid grid-cols-1 md:grid-cols-2" :set="voter=$page.props.user.id">
+        <div class="bg-gray-500 bg-opacity-25 grid grid-cols-2 md:grid-cols-2">
+            <div>
+                Current Casted Votes (Poll):<br/>
+                Current Casted Votes (Election):<br/>
+                Total Qualified Voters:
+            </div>
+            <div>
+                {{ countStatistics.polled }}<br/>
+                {{ countStatistics.voted }}<br/>
+                {{ countStatistics.voters }}
+            </div>
+        </div>
+
+        <div class="bg-gray-500 bg-opacity-25 grid grid-cols-2 md:grid-cols-4">
+            <div>
+                Poll 1 (Agree):<br/>
+                Poll 1 (Disagree):<br/>
+                Poll 1 (Abstain):
+            </div>
+            <div>
+                {{ pollStatistics.agree1 }}<br/>
+                {{ pollStatistics.disagree1 }} <br/>
+                {{ pollStatistics.abstain1 }}
+            </div>
+            <div>
+                Poll 2 (Agree): <br/>
+                Poll 2 (Disagree): <br/>
+                Poll 2 (Abstain):
+            </div>
+            <div>
+                {{ pollStatistics.agree2 }}<br/>
+                {{ pollStatistics.disagree2 }} <br/>
+                {{ pollStatistics.abstain2 }}
+            </div>
+        </div>
+
     </div>
     <div class="bg-gray-200 bg-opacity-25 grid grid-cols-1 md:grid-cols-1">
         <div class="px-2">
@@ -63,16 +97,31 @@ export default {
             countStatistics: [],
             results: [],
             candidateResults: [],
+            tgetcount: null,
+            tgetresult: null,
+            tcombine: null,
+            tgetpollcount: null,
+            pollStatistics: [],
         }
     },
     created() {
+        console.log('created');
         this.list();
         this.getCount();
+        this.getPollCount();
         this.getResult();
         this.combine();
-        setInterval(this.getCount, 6000);
-        setInterval(this.getResult, 6000);
-        setInterval(this.combine, 6000);
+        this.tgetcount = setInterval(this.getCount, 5000);
+        this.tgetpollcount = setInterval(this.getPollCount, 5000);
+        this.tgetresult = setInterval(this.getResult, 5000);
+        this.tcombine = setInterval(this.combine, 5000);
+    },
+    unmounted() {
+        console.log("Idiots are here");
+        clearInterval(this.tgetcount);
+        clearInterval(this.tgetresult);
+        clearInterval(this.tcombine);
+        clearInterval(this.tgetpollcount);
     },
     methods: {
         list() {
@@ -95,6 +144,19 @@ export default {
             BaseApi.get("count").then((response) => {
                 console.log(response.data);
                 this.countStatistics = response.data;
+            })
+                .catch((error) => {
+                    console.log("error")
+                })
+
+        },
+        getPollCount() {
+            let BaseApi = axios.create({
+                baseURL: "http://event.uscmpc.com/api"
+            });
+            BaseApi.get("count-poll").then((response) => {
+                console.log(response.data);
+                this.pollStatistics = response.data;
             })
                 .catch((error) => {
                     console.log("error")
