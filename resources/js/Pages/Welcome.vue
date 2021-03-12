@@ -41,7 +41,7 @@
                                 <span class="text-sm text-green-400 text-2xl 2xl:leading-8 font-bold">
                                 <inertia-link v-if="canRegister" :href="route('register')"
                                               class="">
-                                   Please register for the event here
+                                   Please click here to register for the event
                                 </inertia-link></span>
                             </div>
                         </div>

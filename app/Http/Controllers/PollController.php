@@ -52,52 +52,61 @@ class PollController extends Controller
     }
 
 
-/**
- * Display the specified resource.
- *
- * @param int $id
- * @return \Illuminate\Http\Response
- */
-public
-function show($id)
-{
-    //
-}
+    /**
+     * Display the specified resource.
+     *
+     * @param int $id
+     * @return \Illuminate\Http\Response
+     */
+    public function show($id)
+    {
+        //
+    }
 
-/**
- * Show the form for editing the specified resource.
- *
- * @param int $id
- * @return \Illuminate\Http\Response
- */
-public
-function edit($id)
-{
-    //
-}
+    /**
+     * Show the form for editing the specified resource.
+     *
+     * @param int $id
+     * @return \Illuminate\Http\Response
+     */
+    public function edit($id)
+    {
+        //
+    }
 
-/**
- * Update the specified resource in storage.
- *
- * @param \Illuminate\Http\Request $request
- * @param int $id
- * @return \Illuminate\Http\Response
- */
-public
-function update(Request $request, $id)
-{
-    //
-}
+    /**
+     * Update the specified resource in storage.
+     *
+     * @param \Illuminate\Http\Request $request
+     * @param int $id
+     * @return \Illuminate\Http\Response
+     */
+    public function update(Request $request, $id)
+    {
+        //
+    }
 
-/**
- * Remove the specified resource from storage.
- *
- * @param int $id
- * @return \Illuminate\Http\Response
- */
-public
-function destroy($id)
-{
-    //
-}
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param int $id
+     * @return \Illuminate\Http\Response
+     */
+    public function destroy($id)
+    {
+        //
+    }
+
+    public function getCountStatistics()
+    {
+        $data = [
+            'agree1'=> Poll::where('q1', '=', 0)->count(),
+            'disagree1' => Poll::where('q1', '=', 1)->count(),
+            'abstain1' => Poll::where('q1', '=', 2)->count(),
+            'agree2'=> Poll::where('q2', '=', 0)->count(),
+            'disagree2' => Poll::where('q2', '=', 1)->count(),
+            'abstain2' => Poll::where('q2', '=', 2)->count(),
+        ];
+        return $data;
+    }
 }

@@ -29,6 +29,12 @@ Route::get('/test', [CandidateController::class, 'list']);
 //Routes for vote
 Route::get('/candidate-list', [CandidateController::class, 'list']);
 Route::get('/count', [UserController::class, 'getCountStatistics']);
+Route::get('/count-poll', [PollController::class, 'getCountStatistics']);
 Route::get('/result', [ElectionController::class, 'getResults']);
 Route::post('/cast-vote', [ElectionController::class, 'store']);
 Route::post('/cast-poll', [PollController::class, 'store']);
+Route::get('/member-list', [UserController::class, 'getRegisteredUsers']);
+Route::post('/can-vote', [UserController::class, 'validateCanVote']);
+Route::post('/cannot-vote', [UserController::class, 'validateCannotVote']);
+Route::post('/start-election', [UserController::class, 'updateElectionStatus1']);
+Route::post('/end-election', [UserController::class, 'updateElectionStatus2']);
