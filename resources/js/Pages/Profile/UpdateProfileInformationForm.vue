@@ -143,7 +143,7 @@
             return {
                 form: this.$inertia.form({
                     _method: 'PUT',
-                    uscmpc_id: this.user.uscmpc_id.substr(0,2)+"-"+this.user.uscmpc_id.substr(2,2)+"-"+this.user.uscmpc_id.substr(4,4),
+                    uscmpc_id: this.user.uscmpc_id!=null? this.user.uscmpc_id.substr(0,2)+"-"+this.user.uscmpc_id.substr(2,2)+"-"+this.user.uscmpc_id.substr(4,4): "",
                     title: this.user.title,
                     first_name: this.user.first_name,
                     middle_name: this.user.middle_name,
