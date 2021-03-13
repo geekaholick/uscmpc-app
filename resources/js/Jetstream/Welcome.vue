@@ -1,20 +1,24 @@
 <template>
     <div>
         <div class="p-6 sm:px-20 bg-white border-b border-gray-200">
-            <div class="mt-8 text-2xl">
+            <div class="mt-8 text-3xl">
                 Hello <span class="font-bold">{{ $page.props.user.title }}
                 {{ $page.props.user.first_name }}
                 {{ $page.props.user.last_name }}!</span><br/>
-                Welcome to your USC Multi-purpose Cooperative election portal!
+                Welcome to your USC Multi-Purpose Cooperative election portal!
             </div>
             <div v-if="$page.props.user.uscmpc_id != null">
-                <div class="mt-6 text-gray-500">
+                <div class="mt-6 md:text-lg text-gray-500">
+                    <div>
+                        <span class="text-3xl">Registration <span class="text-green-400 underline">COMPLETE</span>.</span>
+                    </div>
                     <div v-if="$page.props.user.can_vote">
-                        You are <span class="lg:font-bold">ELIGIBLE</span> for voting in the election for the board of directors.
+
+                        You are <span class="lg:font-bold underline">ELIGIBLE</span> for voting in the election for the board of directors.
                     </div>
 
                     <div v-else>
-                        Sorry to inform you that you're <span class="lg:font-bold">NOT ELIGIBLE</span> for voting in the election for the board of directors. <br/>
+                        Sorry to inform you that you're <span class="lg:font-bold underline">NOT ELIGIBLE</span> for voting in the election for the board of directors. <br/>
                         If you have questions, please don't hesitate to contact the office.<br/>
                         Contact Email: usc_mpc@yahoo.com <br/>
                         Alternate Email: official.uscmpc@gmail.com<br/>
@@ -24,9 +28,16 @@
                 </div>
             </div>
             <div v-else>
-                <div class="mt-6 text-gray-500">
+                <div class="mt-6 md:text-lg text-gray-500">
                     <div>
-                        Please wait as your account is being reviewed. It may take 5 - 15 minutes. We humbly ask your patience as we confirm your account. Don't worry you can still join the 58th General Assembly by clicking on the Zoom link below.
+                        <span class="text-2xl font-bold bg-yellow-300">Please wait as your account is being reviewed to <span class="underline text-black">complete the registration</span>. It may take 5 - 15 minutes.</span> We humbly ask your patience as we confirm your account. Don't worry you can still join the 58th General Assembly by clicking on the Zoom link below.
+                    </div>
+                    <div>
+                        ---<br/>
+                        If you have questions, please don't hesitate to contact the office.<br/>
+                        Email: official.uscmpc@gmail.com<br/>
+                        Contact Number: (032)233 4341<br/>
+                        Contact Person: USC MPC Registration Team
                     </div>
                 </div>
             </div>

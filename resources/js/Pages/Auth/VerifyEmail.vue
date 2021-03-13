@@ -4,8 +4,9 @@
             <jet-authentication-card-logo />
         </template>
 
-        <div class="mb-4 text-sm text-gray-600">
-            Thanks for signing up! Before getting started, could you verify your email address by clicking on the link we just emailed to you? If you didn't receive the email, we will gladly send you another.
+        <div class="mb-4 text-lg text-gray-600">
+            Thanks for signing up! To continue, please verify your email address by <span class="bg-yellow-300 font-bold">clicking on the link we just emailed</span> to you. If you didn't receive the email at <span class="font-bold">'{{ $page.props.user.email }}'</span>, we will gladly send you another.<br/>
+
         </div>
 
         <div class="mb-4 font-medium text-sm text-green-600" v-if="verificationLinkSent" >
