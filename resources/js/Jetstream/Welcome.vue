@@ -19,9 +19,9 @@
 
                     <div v-else>
                         Sorry to inform you that you're <span class="lg:font-bold underline">NOT ELIGIBLE</span> for voting in the election for the board of directors. <br/>
+                        ---<br/>
                         If you have questions, please don't hesitate to contact the office.<br/>
-                        Contact Email: usc_mpc@yahoo.com <br/>
-                        Alternate Email: official.uscmpc@gmail.com<br/>
+                        Email: official.uscmpc@gmail.com<br/>
                         Contact Number: (032)384 0024<br/>
                         Contact Person: Maria Conception Gaviola
                     </div>
