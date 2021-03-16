@@ -6,8 +6,15 @@
             </div>
 
             <div v-if="$page.props.user.uscmpc_id==null">
-                <div class="mt-6 text-gray-500">
-                    Please wait as your account is being reviewed for authenticity.
+                <div class="mt-6 text-lg text-gray-500">
+                    Sorry we could not validate your account.
+                </div>
+                <div>
+                    ---<br/>
+                    If you have questions, please don't hesitate to contact the office.<br/>
+                    Email: official.uscmpc@gmail.com<br/>
+                    Contact Number: (032)233 4341<br/>
+                    Contact Person: USC MPC Registration Team
                 </div>
             </div>
             <div v-else>
@@ -24,8 +31,7 @@
                         Sorry to inform you that you're <span class="lg:font-bold underline italic">NOT ELIGIBLE</span> for
                         the poll.<br/><br/>
                         If you have questions, please don't hesitate to contact the office.<br/>
-                        Contact Email: usc_mpc@yahoo.com <br/>
-                        Alternate Email: official.uscmpc@gmail.com<br/>
+                        Email: official.uscmpc@gmail.com<br/>
                         Contact Number: (032)384 0024<br/>
                         Contact Person: Maria Conception Gaviola
                     </div>
