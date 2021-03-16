@@ -11,9 +11,9 @@
                     <span class="text-l">Log in</span>
                 </inertia-link>
 
-                <inertia-link v-if="canRegister" :href="route('register')" class="ml-4 text-sm text-gray-700 underline">
-                    <span class="text-l">Register</span>
-                </inertia-link>
+<!--                <inertia-link v-if="canRegister" :href="route('register')" class="ml-4 text-sm text-gray-700 underline">-->
+<!--                    <span class="text-l">Register</span>-->
+<!--                </inertia-link>-->
             </template>
         </div>
 
@@ -35,14 +35,21 @@
                                     d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path>
                             </svg>
                             <div class="ml-4 ">
-                                <span class="text-2xl 2xl:leading-8 font-bold">University of San Carlos Multi-Purpose Cooperative</span> <br/>
-                                <span class="text-xl xl:leading-8 font-bold">58th General Assembly<br/>
-                                    March 14, 2021 SUNDAY @ 09:30 AM</span><br/>
-                                <span class="text-sm text-green-400 text-2xl 2xl:leading-8 font-bold">
-                                <inertia-link v-if="canRegister" :href="route('register')"
-                                              class="">
-                                   Please click here to register for the event
-                                </inertia-link></span>
+                                <span class="text-2xl 2xl:leading-8 font-bold">University of San Carlos Multi-Purpose Cooperative</span>
+                                <br/>
+                                <span class="text-xl xl:leading-8 font-bold">Election</span><br/>
+                                <div v-if="canLogin">
+                                    <inertia-link v-if="$page.props.user" href="/dashboard"
+                                                  class="text-sm text-gray-700 underline">
+                                        <span class="text-sm text-green-400 text-2xl 2xl:leading-8 font-bold">Proceed to Dashboard</span>
+                                    </inertia-link>
+
+                                    <template v-else>
+                                        <inertia-link :href="route('login')" class="text-sm text-gray-700 underline">
+                                            <span class="text-sm text-green-400 text-2xl 2xl:leading-8 font-bold">Proceed to Log in</span>
+                                        </inertia-link>
+                                    </template>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -104,10 +111,10 @@
                                     Log in
                                 </inertia-link>
 
-                                <inertia-link v-if="canRegister" :href="route('register')"
-                                              class="ml-4 text-sm text-gray-700">
-                                    Register
-                                </inertia-link>
+<!--                                <inertia-link v-if="canRegister" :href="route('register')"-->
+<!--                                              class="ml-4 text-sm text-gray-700">-->
+<!--                                    Register-->
+<!--                                </inertia-link>-->
                             </template>
                         </div>
                         <!--                        <svg fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"-->
