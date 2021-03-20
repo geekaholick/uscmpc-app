@@ -68,7 +68,7 @@
                 </div>
                 <div class="mt-6 text-lg text-gray-500" v-else-if="$page.props.user.election_status==2">
                     <div>
-                        The election has ended.<br/>
+                        The election CLOSED.<br/>
                         <div v-if="!$page.props.user.poll_status">
                             <jet-nav-link :href="route('poll')" :active="route().current('poll')" class="text-sm text-green-400 text-xl xl:leading-8 font-bold">
                                 Click here to participate the poll.

@@ -18,7 +18,7 @@
                 </div>
             </div>
             <div v-else>
-                <div class="mt-6 text-gray-500">
+                <div class="mt-6 text-lg text-gray-500">
                     <div v-if="$page.props.user.can_vote && !$page.props.user.poll_status">
                         You are <span class="lg:font-bold underline italic">ELIGIBLE</span> for participating the poll.
                     </div>
@@ -29,7 +29,9 @@
 
                     <div v-else>
                         Sorry to inform you that you're <span class="lg:font-bold underline italic">NOT ELIGIBLE</span> for
-                        the poll.<br/><br/>
+                        the poll.<br/>
+                        ---
+                        <br/>
                         If you have questions, please don't hesitate to contact the office.<br/>
                         Email: official.uscmpc@gmail.com<br/>
                         Contact Number: (032)384 0024<br/>
@@ -40,7 +42,7 @@
 
         </div>
         <div class="bg-gray-200 bg-opacity-25 grid grid-cols-1 md:grid-cols-1"
-             v-if="$page.props.user.can_vote && !$page.props.user.poll_status && $page.props.user.uscmpc_id!=null">
+             v-if="$page.props.user.can_vote && !$page.props.user.poll_status && $page.props.user.uscmpc_id!=null && $page.props.user.election_status==1">
             <div>
                 <question-list/>
             </div>
