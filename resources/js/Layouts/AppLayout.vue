@@ -20,7 +20,7 @@
                                 <jet-nav-link :href="route('dashboard')" :active="route().current('dashboard')">
                                     Dashboard
                                 </jet-nav-link>
-                                <jet-nav-link :href="route('election')" :active="route().current('election')">
+                                <!-- <jet-nav-link :href="route('election')" :active="route().current('election')">
                                     Election
                                 </jet-nav-link>
                                 <jet-nav-link :href="route('poll')" :active="route().current('poll')">
@@ -37,7 +37,7 @@
                                 <jet-nav-link :href="route('control')" :active="route().current('control')"
                                               v-if="$page.props.user.type==1">
                                     Control
-                                </jet-nav-link>
+                                </jet-nav-link> -->
                             </div>
                         </div>
 

@@ -1,19 +1,29 @@
 <template>
-    <div>
-        <div class="p-6 sm:px-20 bg-white border-b border-gray-200">
-            <div class="mt-8 text-3xl">
-                Hello <span class="font-bold">{{ $page.props.user.title }}
-                {{ $page.props.user.first_name }}
-                {{ $page.props.user.last_name }}!</span><br/>
-                Welcome to your USC Multi-Purpose Cooperative election portal!
+  <div>
+    <div class="p-6 sm:px-20 bg-white border-b border-gray-200">
+      <div class="mt-8 text-3xl">
+        Hello
+        <span class="font-bold"
+          >{{ $page.props.user.title }}
+          {{ $page.props.user.first_name }}
+          {{ $page.props.user.last_name }}!</span
+        ><br />
+        Welcome to your USC and Community Multi-Purpose Cooperative portal!
+      </div>
+      <div v-if="$page.props.user.uscmpc_id != null">
+        <div class="mt-6 md:text-2xl text-gray-500">
+          <div>
+            Special General Assembly Meeting <br />
+            October 24, 2021 (Sunday) via Zoom <br />
+            <div class="mt-6 md:text-xl text-gray-400">
+              <div v-if="status == 0">Event registration will open by 7:00 AM until 9:00 AM.</div>
+              <dir v-else-if="status == 1">
+                <jet-button class="ml-2" @click="checkIn">Check In</jet-button>
+              </dir>
+              <div v-else>You have already check-in for the event.</div>
             </div>
-            <div v-if="$page.props.user.uscmpc_id != null">
-                <div class="mt-6 md:text-lg text-gray-500">
-<!--                    <div>-->
-<!--                        <span class="text-3xl">Registration <span class="text-green-400 underline">COMPLETE</span>.</span>-->
-<!--                    </div>-->
-                    <div v-if="$page.props.user.can_vote">
-
+          </div>
+          <!-- <div v-if="$page.props.user.can_vote">
                         You are <span class="lg:font-bold underline">ELIGIBLE</span> for voting in the election for the board of directors and participating the poll of amendments.
                     </div>
 
@@ -24,27 +34,29 @@
                         Email: official.uscmpc@gmail.com<br/>
                         Contact Number: (032)384 0024<br/>
                         Contact Person: Maria Conception Gaviola
-                    </div>
-                </div>
-            </div>
-            <div v-else>
-                <div class="mt-6 md:text-lg text-gray-500">
-                    <div>
-                        <span class="text-2xl font-bold bg-yellow-300">Sorry we could not validate your account.</span>
-                    </div>
-                    <div>
-                        ---<br/>
-                        If you have questions, please don't hesitate to contact the office.<br/>
-                        Email: official.uscmpc@gmail.com<br/>
-                        Contact Number: (032)233 4341<br/>
-                        Contact Person: USC MPC Registration Team
-                    </div>
-                </div>
-            </div>
-
+                    </div> -->
         </div>
+      </div>
+      <div v-else>
+        <div class="mt-6 md:text-lg text-gray-500">
+          <div>
+            <span class="text-2xl font-bold bg-yellow-300"
+              >Your account is being validated.</span
+            >
+          </div>
+          <div>
+            ---<br />
+            If you have questions, please don't hesitate to contact the
+            office.<br />
+            Email: official.uscmpc@gmail.com<br />
+            USCMPC Technical Committee Contact Number: (032)233 4341<br />
+            Contact Person: USC MPC Registration Team
+          </div>
+        </div>
+      </div>
+    </div>
 
-        <div class="bg-gray-200 bg-opacity-25 grid grid-cols-1 md:grid-cols-2" v-if="$page.props.user.uscmpc_id != null && $page.props.user.can_vote">
+    <!-- <div class="bg-gray-200 bg-opacity-25 grid grid-cols-1 md:grid-cols-2" v-if="$page.props.user.uscmpc_id != null && $page.props.user.can_vote">
             <div class="p-6">
                 <div class="flex items-center">
                     <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" class="w-8 h-8 text-gray-400"><path d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path></svg>
@@ -103,42 +115,57 @@
                     </a>
                 </div>
             </div>
-        </div>
+        </div> -->
 
-<!--        <div class="bg-gray-200 bg-opacity-25 grid grid-cols-1 md:grid-cols-1">-->
-<!--            <div class="p-6">-->
-<!--                <div class="flex items-center">-->
-<!--                    <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" class="w-8 h-8 text-gray-400"><path d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path></svg>-->
-<!--                    <div class="ml-4 text-lg text-gray-600 leading-7 font-bold"><a :href="'//' + 'us02web.zoom.us/j/81874405873?pwd=QlBLOWtWeGdFbXNtdThJZC9CS2VGZz09'" target="_blank">General Assembly - Zoom</a></div>-->
-<!--                </div>-->
+    <!--        <div class="bg-gray-200 bg-opacity-25 grid grid-cols-1 md:grid-cols-1">-->
+    <!--            <div class="p-6">-->
+    <!--                <div class="flex items-center">-->
+    <!--                    <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" class="w-8 h-8 text-gray-400"><path d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path></svg>-->
+    <!--                    <div class="ml-4 text-lg text-gray-600 leading-7 font-bold"><a :href="'//' + 'us02web.zoom.us/j/81874405873?pwd=QlBLOWtWeGdFbXNtdThJZC9CS2VGZz09'" target="_blank">General Assembly - Zoom</a></div>-->
+    <!--                </div>-->
 
-<!--                <div class="ml-12">-->
-<!--                    <div class="mt-2 text-sm text-gray-500">-->
-<!--                        The general assembly will be in zoom.<br/>-->
-<!--                        Meeting ID: <span class="font-bold">818 7440 5873</span><br/>-->
-<!--                        Passcode: <span class="font-bold">USCMPC</span>-->
-<!--                    </div>-->
-<!--                    <a :href="'//' + 'us02web.zoom.us/j/81874405873?pwd=QlBLOWtWeGdFbXNtdThJZC9CS2VGZz09'" target="_blank">-->
-<!--                        <div class="mt-3 flex items-center text-sm font-semibold text-indigo-700">-->
-<!--                            <div>Click here to join in the zoom</div>-->
+    <!--                <div class="ml-12">-->
+    <!--                    <div class="mt-2 text-sm text-gray-500">-->
+    <!--                        The general assembly will be in zoom.<br/>-->
+    <!--                        Meeting ID: <span class="font-bold">818 7440 5873</span><br/>-->
+    <!--                        Passcode: <span class="font-bold">USCMPC</span>-->
+    <!--                    </div>-->
+    <!--                    <a :href="'//' + 'us02web.zoom.us/j/81874405873?pwd=QlBLOWtWeGdFbXNtdThJZC9CS2VGZz09'" target="_blank">-->
+    <!--                        <div class="mt-3 flex items-center text-sm font-semibold text-indigo-700">-->
+    <!--                            <div>Click here to join in the zoom</div>-->
 
-<!--                            <div class="ml-1 text-indigo-500">-->
-<!--                                <svg viewBox="0 0 20 20" fill="currentColor" class="w-4 h-4"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>-->
-<!--                            </div>-->
-<!--                        </div>-->
-<!--                    </a>-->
-<!--                </div>-->
-<!--            </div>-->
-<!--        </div>-->
-    </div>
+    <!--                            <div class="ml-1 text-indigo-500">-->
+    <!--                                <svg viewBox="0 0 20 20" fill="currentColor" class="w-4 h-4"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>-->
+    <!--                            </div>-->
+    <!--                        </div>-->
+    <!--                    </a>-->
+    <!--                </div>-->
+    <!--            </div>-->
+    <!--        </div>-->
+  </div>
 </template>
 n
 <script>
-    import JetApplicationLogo from '@/Jetstream/ApplicationLogo'
+import JetApplicationLogo from "@/Jetstream/ApplicationLogo";
+import JetButton from "@/Jetstream/Button";
+import axios from "axios";
 
-    export default {
-        components: {
-            JetApplicationLogo,
-        },
-    }
+export default {
+  components: {
+    JetApplicationLogo,
+    JetButton,
+  },
+  data() {
+      status: 0
+  },
+  created() {
+      this.status = 0
+  },
+  methods: {
+      checkIn() {
+          this.status = 2
+          window.location.reload();
+      }
+  }
+};
 </script>
