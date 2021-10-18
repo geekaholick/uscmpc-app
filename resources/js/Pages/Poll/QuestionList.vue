@@ -44,11 +44,11 @@
             Summary of Choices:<br/>
             First Amendment  : <span class="lg:font-bold underline "> <span v-if="questions[0].selected==0" >Agree</span>
                                                                       <span v-else-if="questions[0].selected==1" >Disagree</span>
-                                                                      <span v-else="questions[0].selected==2" >Abstain</span>
+                                                                      <span v-else-if="questions[0].selected==2" >Abstain</span>
                                </span><br/>
             Second Amendment : <span class="lg:font-bold underline "> <span v-if="questions[1].selected==0" >Agree</span>
                                                                       <span v-else-if="questions[1].selected==1" >Disagree</span>
-                                                                      <span v-else="questions[1].selected==2" >Abstain</span>
+                                                                      <span v-else-if="questions[1].selected==2" >Abstain</span>
                                </span>
 
 
