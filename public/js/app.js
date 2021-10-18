@@ -17094,15 +17094,41 @@ __webpack_require__.r(__webpack_exports__);
     JetButton: _Jetstream_Button__WEBPACK_IMPORTED_MODULE_1__.default
   },
   data: function data() {
-    status: 0;
+    return {
+      current_user: null,
+      time_in: null
+    };
   },
-  created: function created() {
-    this.status = 0;
-  },
+  created: function created() {},
   methods: {
     checkIn: function checkIn() {
-      this.status = 2;
-      window.location.reload();
+      // this.status = 1;
+      // window.location.reload();
+      var BaseApi = axios__WEBPACK_IMPORTED_MODULE_2___default().create({
+        baseURL: "http://event.uscmpc.com/api"
+      });
+      BaseApi.post("check-in", {
+        current_user: this.current_user
+      }).then(function (response) {
+        console.log(response.data);
+        window.location.reload();
+      })["catch"](function (error) {
+        console.log("error");
+      });
+    },
+    get_time: function get_time() {
+      var _this = this;
+
+      var BaseApi = axios__WEBPACK_IMPORTED_MODULE_2___default().create({
+        baseURL: "http://event.uscmpc.com/api"
+      });
+      BaseApi.post("time-in", {
+        current_user: this.current_user
+      }).then(function (response) {
+        _this.time_in = response.data;
+      })["catch"](function (error) {
+        console.log("error");
+      });
     }
   }
 });
@@ -20396,7 +20422,7 @@ var _hoisted_7 = {
   key: 0
 };
 var _hoisted_8 = {
-  "class": "mt-6 md:text-2xl text-gray-500"
+  "class": "mt-6 md:text-2xl text-gray-800"
 };
 
 var _hoisted_9 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" Special General Assembly Meeting ");
@@ -20412,58 +20438,107 @@ var _hoisted_12 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(
 );
 
 var _hoisted_13 = {
-  "class": "mt-6 md:text-xl text-gray-400"
+  "class": "mt-6 md:text-xl text-gray-800"
 };
 var _hoisted_14 = {
   key: 0
 };
 
-var _hoisted_15 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)("Check In");
+var _hoisted_15 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("span", {
+  "class": "mt-6 md:text-2xl font-bold"
+}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" Event registration will open from "), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("span", {
+  "class": "underline text-green-800"
+}, "7:00 AM"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" until "), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("span", {
+  "class": "underline text-green-800"
+}, "9:00 AM"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(". A \"Check-In\" button will show here. ")], -1
+/* HOISTED */
+);
 
-var _hoisted_16 = {
+var _hoisted_16 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("br", null, null, -1
+/* HOISTED */
+);
+
+var _hoisted_17 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" A meal allowance (Php 200.00) and internet allowance (Php 300.00) will be credited to your respective PNB Bank accounts at least a week after the special General Assembly for a successful check-in. ");
+
+var _hoisted_18 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("br", null, null, -1
+/* HOISTED */
+);
+
+var _hoisted_19 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" Thank you. ");
+
+var _hoisted_20 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" Click the check-in button to Register/Confirm attendance. ");
+
+var _hoisted_21 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)("Check In");
+
+var _hoisted_22 = {
   key: 2
 };
-var _hoisted_17 = {
+
+var _hoisted_23 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" Attendance Status: ");
+
+var _hoisted_24 = {
+  key: 0
+};
+
+var _hoisted_25 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" PRESENT");
+
+var _hoisted_26 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("br", null, null, -1
+/* HOISTED */
+);
+
+var _hoisted_27 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" You have already check-in for the event. Please proceed to the zoom link provided. ");
+
+var _hoisted_28 = {
   key: 1
 };
 
-var _hoisted_18 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", {
-  "class": "mt-6 md:text-lg text-gray-500"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", null, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("span", {
-  "class": "text-2xl font-bold bg-yellow-300"
-}, "Your account is being validated.")]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", null, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" ---"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("br"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" If you have questions, please don't hesitate to contact the office."), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("br"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" Email: official.uscmpc@gmail.com"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("br"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" USCMPC Technical Committee Contact Number: (032)233 4341"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("br"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" Contact Person: USC MPC Registration Team ")])], -1
+var _hoisted_29 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" ABSENT");
+
+var _hoisted_30 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("br", null, null, -1
 /* HOISTED */
 );
+
+var _hoisted_31 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" You have missed the CHECK-IN time for the event. ");
+
+var _hoisted_32 = {
+  key: 1
+};
+
+var _hoisted_33 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<div class=\"mt-6 md:text-lg text-gray-500\"><div><span class=\"text-2xl font-bold bg-yellow-300\">Your account is being validated.</span></div><div> ---<br> If you have questions, please don&#39;t hesitate to contact the office.<br> Email: official.uscmpc@gmail.com<br> USCMPC Technical Committee Contact Number: (032)233 4341<br> Contact Person: USC MPC Registration Team<br> ---<br> Contact Number: (032)384 0024<br> Contact Person: Maria Conception Gaviola </div></div>", 1);
 
 function render(_ctx, _cache, $props, $setup, $data, $options) {
   var _component_jet_button = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("jet-button");
 
   var _component_dir = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("dir");
 
-  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("div", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_2, [_hoisted_3, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("span", _hoisted_4, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(_ctx.$page.props.user.title) + " " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(_ctx.$page.props.user.first_name) + " " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(_ctx.$page.props.user.last_name) + "!", 1
+  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("div", {
+    set: $data.current_user = _ctx.$page.props.user.id
+  }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_2, [_hoisted_3, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("span", _hoisted_4, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(_ctx.$page.props.user.title) + " " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(_ctx.$page.props.user.first_name) + " " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(_ctx.$page.props.user.last_name) + "! ", 1
   /* TEXT */
-  ), _hoisted_5, _hoisted_6]), _ctx.$page.props.user.uscmpc_id != null ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("div", _hoisted_7, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_8, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", null, [_hoisted_9, _hoisted_10, _hoisted_11, _hoisted_12, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_13, [_ctx.status == 0 ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("div", _hoisted_14, "Event registration will open by 7:00 AM until 9:00 AM.")) : _ctx.status == 1 ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)(_component_dir, {
+  ), _hoisted_5, _hoisted_6]), _ctx.$page.props.user.uscmpc_id != null ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("div", _hoisted_7, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_8, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", null, [_hoisted_9, _hoisted_10, _hoisted_11, _hoisted_12, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_13, [_ctx.$page.props.user.election_status == 0 ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("div", _hoisted_14, [_hoisted_15, _hoisted_16, _hoisted_17, _hoisted_18, _hoisted_19])) : _ctx.$page.props.user.election_status == 1 ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)(_component_dir, {
     key: 1
   }, {
     "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
-      return [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_jet_button, {
+      return [_hoisted_20, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_jet_button, {
         "class": "ml-2",
         onClick: $options.checkIn
       }, {
         "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
-          return [_hoisted_15];
+          return [_hoisted_21];
         }),
         _: 1
         /* STABLE */
 
       }, 8
       /* PROPS */
-      , ["onClick"])];
+      , ["onClick"])])];
     }),
     _: 1
     /* STABLE */
 
-  })) : ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("div", _hoisted_16, "You have already check-in for the event."))])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <div v-if=\"$page.props.user.can_vote\">\r\n                        You are <span class=\"lg:font-bold underline\">ELIGIBLE</span> for voting in the election for the board of directors and participating the poll of amendments.\r\n                    </div>\r\n\r\n                    <div v-else>\r\n                        Sorry to inform you that you're <span class=\"lg:font-bold underline\">NOT ELIGIBLE</span> for voting in the election for the board of directors. <br/>\r\n                        ---<br/>\r\n                        If you have questions, please don't hesitate to contact the office.<br/>\r\n                        Email: official.uscmpc@gmail.com<br/>\r\n                        Contact Number: (032)384 0024<br/>\r\n                        Contact Person: Maria Conception Gaviola\r\n                    </div> ")])])) : ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("div", _hoisted_17, [_hoisted_18]))]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <div class=\"bg-gray-200 bg-opacity-25 grid grid-cols-1 md:grid-cols-2\" v-if=\"$page.props.user.uscmpc_id != null && $page.props.user.can_vote\">\r\n            <div class=\"p-6\">\r\n                <div class=\"flex items-center\">\r\n                    <svg fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" viewBox=\"0 0 24 24\" class=\"w-8 h-8 text-gray-400\"><path d=\"M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253\"></path></svg>\r\n                    <div class=\"ml-4 text-2xl text-gray-600 leading-7 font-bold\"><a v-bind:href=\"route('election')\">Election</a></div>\r\n                </div>\r\n\r\n                <div class=\"ml-12\">\r\n                    <div class=\"mt-2 text-lg text-gray-500\">\r\n                        Eligible voting member must be:\r\n                        <div class=\"list-disc pl-2\">\r\n                            <li>a regular member of the USC MPC.</li>\r\n                            <li>registered during the General Assembly Day.</li>\r\n                            <li>a member of good standing (MIGS).</li>\r\n                        </div>\r\n\r\n                    </div>\r\n                    <div class=\"mt-2 text-lg text-gray-500\">\r\n                        Election Schedule:\r\n                        <div class=\"list-none pl-7 font-bold\">\r\n                            <li class=\"italic\">As stated in the email.</li>\r\n                        </div>\r\n\r\n                    </div>\r\n\r\n                    <a v-bind:href=\"route('election')\">\r\n                        <div class=\"mt-3 flex items-center text-2xl font-semibold text-indigo-700\">\r\n                                <div>Cast your vote</div>\r\n\r\n                                <div class=\"ml-1 text-indigo-500\">\r\n                                    <svg viewBox=\"0 0 20 20\" fill=\"currentColor\" class=\"w-4 h-4\"><path fill-rule=\"evenodd\" d=\"M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z\" clip-rule=\"evenodd\"></path></svg>\r\n                                </div>\r\n                        </div>\r\n                    </a>\r\n                </div>\r\n            </div>\r\n\r\n            <div class=\"p-6 border-t border-gray-200 md:border-t-0 md:border-l\">\r\n                <div class=\"flex items-center\">\r\n                    <svg fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" viewBox=\"0 0 24 24\" class=\"w-8 h-8 text-gray-400\"><path d=\"M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z\"></path><path d=\"M15 13a3 3 0 11-6 0 3 3 0 016 0z\"></path></svg>\r\n                    <div class=\"ml-4 text-2xl text-gray-600 leading-7 font-semibold\"><a v-bind:href=\"route('poll')\">Poll</a></div>\r\n                </div>\r\n\r\n                <div class=\"ml-12\">\r\n                    <div class=\"mt-2 text-lg text-gray-500\">\r\n                        Participate in the amendment of a new guideline.\r\n                    </div>\r\n\r\n                    <a v-bind:href=\"route('poll')\">\r\n                        <div class=\"mt-3 flex items-center text-2xl font-semibold text-indigo-700\">\r\n                                <div>Participate now</div>\r\n\r\n                                <div class=\"ml-1 text-indigo-500\">\r\n                                    <svg viewBox=\"0 0 20 20\" fill=\"currentColor\" class=\"w-4 h-4\"><path fill-rule=\"evenodd\" d=\"M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z\" clip-rule=\"evenodd\"></path></svg>\r\n                                </div>\r\n                        </div>\r\n                    </a>\r\n                </div>\r\n            </div>\r\n        </div> "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("        <div class=\"bg-gray-200 bg-opacity-25 grid grid-cols-1 md:grid-cols-1\">"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("            <div class=\"p-6\">"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("                <div class=\"flex items-center\">"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("                    <svg fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" viewBox=\"0 0 24 24\" class=\"w-8 h-8 text-gray-400\"><path d=\"M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253\"></path></svg>"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("                    <div class=\"ml-4 text-lg text-gray-600 leading-7 font-bold\"><a :href=\"'//' + 'us02web.zoom.us/j/81874405873?pwd=QlBLOWtWeGdFbXNtdThJZC9CS2VGZz09'\" target=\"_blank\">General Assembly - Zoom</a></div>"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("                </div>"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("                <div class=\"ml-12\">"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("                    <div class=\"mt-2 text-sm text-gray-500\">"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("                        The general assembly will be in zoom.<br/>"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("                        Meeting ID: <span class=\"font-bold\">818 7440 5873</span><br/>"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("                        Passcode: <span class=\"font-bold\">USCMPC</span>"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("                    </div>"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("                    <a :href=\"'//' + 'us02web.zoom.us/j/81874405873?pwd=QlBLOWtWeGdFbXNtdThJZC9CS2VGZz09'\" target=\"_blank\">"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("                        <div class=\"mt-3 flex items-center text-sm font-semibold text-indigo-700\">"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("                            <div>Click here to join in the zoom</div>"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("                            <div class=\"ml-1 text-indigo-500\">"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("                                <svg viewBox=\"0 0 20 20\" fill=\"currentColor\" class=\"w-4 h-4\"><path fill-rule=\"evenodd\" d=\"M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z\" clip-rule=\"evenodd\"></path></svg>"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("                            </div>"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("                        </div>"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("                    </a>"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("                </div>"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("            </div>"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("        </div>")]);
+  })) : ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("div", _hoisted_22, [_hoisted_23, _ctx.$page.props.user.election_status == 2 ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("span", _hoisted_24, [_hoisted_25, _hoisted_26, _hoisted_27, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" {{ $page.props.user.updated_at }} ")])) : ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("span", _hoisted_28, [_hoisted_29, _hoisted_30, _hoisted_31]))]))])])])])) : ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("div", _hoisted_32, [_hoisted_33]))])], 8
+  /* PROPS */
+  , ["set"]);
 }
 
 /***/ }),
