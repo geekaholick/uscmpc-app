@@ -1,5 +1,5 @@
 <template>
-  <div :set="current_user=$page.props.user.id">
+  <div :set="(current_user = $page.props.user.id)">
     <div class="p-6 sm:px-20 bg-white border-b border-gray-200">
       <div class="mt-8 text-3xl">
         Hello
@@ -14,41 +14,64 @@
         <div class="mt-6 md:text-2xl text-gray-800">
           <div>
             Special General Assembly Meeting <br />
-            October 24, 2021 (Sunday) via Zoom <br />
+            October 24, 2021 (Sunday) via
+            <a
+              href="https://us02web.zoom.us/j/87102886455?pwd=WGI4dUp4ZjFOM3kwbTRyaDZCcWlldz09"
+              class="underline text-blue-500"
+              >Zoom</a
+            >
+            <br />
+            Meeting ID: 871 0288 6455<br />
+            Passcode: USCMPC <br />
             <div class="mt-6 md:text-xl text-gray-800">
               <div v-if="$page.props.user.election_status == 0">
                 <span class="mt-6 md:text-2xl font-bold">
                   Event registration will open from
                   <span class="underline text-green-800">7:00 AM</span> until
                   <span class="underline text-green-800">9:00 AM</span>. A
-                  "Check-In" button will show here.
+                  <u>"Check-In"</u> button will show here.
                 </span>
                 <br />
                 A meal allowance (Php 200.00) and internet allowance (Php
                 300.00) will be credited to your respective PNB Bank accounts at
                 least a week after the special General Assembly for a successful
-                check-in. <br />
-                Thank you.
+                check-in. Thank you.<br />
               </div>
-              <dir v-else-if="$page.props.user.election_status == 1">
-                Click the check-in button to Register/Confirm attendance.
+              <div v-else-if="$page.props.user.election_status == 1">
+                Check-in Time: 7:00 AM - 9:00 AM<br />
+                <span class="mt-6 md:text-2xl font-bold"
+                  >Click the check-in button to Register/Confirm attendance.
+                </span>
                 <div>
                   <jet-button class="ml-2" @click="checkIn"
                     >Check In</jet-button
                   >
                 </div>
-              </dir>
+              </div>
               <div v-else>
-                Attendance Status:
+                <span class="font-bold">Attendance Status: </span>
                 <span v-if="$page.props.user.election_status == 2">
-                  PRESENT<br />
-                  You have already check-in for the event. Please proceed to the
-                  zoom link provided. 
+                  <span class="text-green-800 font-bold">PRESENT</span><br />
+                  You have successfully check-in for the event. Please proceed
+                  to the event using the
+                  <a
+                    href="https://us02web.zoom.us/j/87102886455?pwd=WGI4dUp4ZjFOM3kwbTRyaDZCcWlldz09"
+                    class="underline text-blue-500"
+                    >zoom</a
+                  >
+                  link provided.
                   <!-- {{ $page.props.user.updated_at }} -->
                 </span>
                 <span v-else>
-                  ABSENT<br />
-                  You have missed the CHECK-IN time for the event.
+                  <span class="text-yellow-500 font-bold">LATE</span><br />
+                  You have missed the CHECK-IN time for the event (between 7:00
+                  AM to 9:00 AM). You can still proceed to the event using the
+                  <a
+                    href="https://us02web.zoom.us/j/87102886455?pwd=WGI4dUp4ZjFOM3kwbTRyaDZCcWlldz09"
+                    class="underline text-blue-500"
+                    >zoom</a
+                  >
+                  link provided.
                 </span>
               </div>
             </div>
@@ -93,11 +116,9 @@ export default {
     return {
       current_user: null,
       time_in: null,
-    }
+    };
   },
-  created() {
-    
-  },
+  created() {},
   methods: {
     checkIn() {
       // this.status = 1;
@@ -129,7 +150,7 @@ export default {
         .catch((error) => {
           console.log("error");
         });
-    }
+    },
   },
 };
 </script>

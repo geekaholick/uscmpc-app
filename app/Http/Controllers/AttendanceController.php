@@ -14,15 +14,23 @@ class AttendanceController extends Controller
     {
         $user = User::find($request->input('current_user'));
         $has_checked_in = Attendance::where('user_id', $request->input('current_user'))->first();
+        $date_time_now = Carbon::now();
+        $date_time_set = Carbon::create(2021, 10, 24, 9, 01, 00, "Asia/Manila");
+
         if(!$has_checked_in) {
             $attendance = new Attendance([
                 'user_id' => $request->input('current_user'),
                 'uscmpc_id' => $user->uscmpc_id,
-                'time_in' => Carbon::now()
+                'time_in' => $date_time_now
             ]);
             $attendance->save();
 
-            $user->election_status = 2;
+            if($date_time_set->gte($date_time_now)) {
+                $user->election_status = 2;
+            } else {
+                $user->election_status = 3;
+            }
+            
             $user->save();
 
             return "Check-in successfully.";
