@@ -73,7 +73,7 @@
                             </svg>
                             <div class="ml-4">
                                 <span class="text-2xl 2xl:leading-8 font-bold"
-                                    >University of San Carlos Multi-Purpose
+                                    >USC &amp; Community Multi-Purpose
                                     Cooperative</span
                                 >
                                 <br />

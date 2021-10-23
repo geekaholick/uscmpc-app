@@ -26302,7 +26302,7 @@ var _hoisted_13 = {
 
 var _hoisted_14 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("span", {
   "class": "text-2xl 2xl:leading-8 font-bold"
-}, "University of San Carlos Multi-Purpose Cooperative", -1
+}, "USC & Community Multi-Purpose Cooperative", -1
 /* HOISTED */
 );
 
