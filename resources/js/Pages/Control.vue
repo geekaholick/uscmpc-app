@@ -18,7 +18,7 @@
 
 <script>
     import AppLayout from '@/Layouts/AppLayout'
-    import Show from '@/Pages/Tech/Show'
+    import Show from '@/Pages/Tech/Control'
 
     export default {
         components: {

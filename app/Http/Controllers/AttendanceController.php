@@ -48,4 +48,14 @@ class AttendanceController extends Controller
             return "Has already check-in";
         }
     }
+
+    public function getAttendanceUsers()
+    {
+        $data = [
+            'total'=> Attendance::all()->count(),
+            'regular' => Attendance::join('users', 'attendances.user_id', '=', 'users.id')->where('users.membership', '=', "Regular")->count(),
+            'associate' => Attendance::join('users', 'attendances.user_id', '=', 'users.id')->where('users.membership', '=', "Associate")->count(),
+        ];
+        return $data;
+    }
 }

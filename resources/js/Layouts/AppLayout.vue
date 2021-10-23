@@ -33,11 +33,11 @@
                                 <jet-nav-link :href="route('member')" :active="route().current('member')"
                                               v-if="$page.props.user.type==1">
                                     Member
-                                </jet-nav-link>
+                                </jet-nav-link> -->
                                 <jet-nav-link :href="route('control')" :active="route().current('control')"
                                               v-if="$page.props.user.type==1">
                                     Control
-                                </jet-nav-link> -->
+                                </jet-nav-link>
                             </div>
                         </div>
 

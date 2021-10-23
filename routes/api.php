@@ -40,5 +40,9 @@ Route::post('/cannot-vote/{id}', [UserController::class, 'validateCannotVote']);
 Route::post('/start-election', [UserController::class, 'updateElectionStatus1']);
 Route::post('/end-election', [UserController::class, 'updateElectionStatus2']);
 
+Route::post('/start-registration', [UserController::class, 'updateElectionStatus1']);
+Route::post('/end-registration', [UserController::class, 'updateElectionStatus2']);
+Route::post('/show-participants', [AttendanceController::class, 'getAttendanceUsers']);
+
 Route::post('/check-in',[AttendanceController::class, 'check_in']);
 Route::post('/time-in',[AttendanceController::class, 'time_in']);

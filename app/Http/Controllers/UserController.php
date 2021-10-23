@@ -137,7 +137,7 @@ class UserController extends Controller
 
     public function updateElectionStatus1(Request $request)
     {
-        $users = User::all();
+        $users =  User::where('election_status', '<', 2)->get();
         $i = 0;
 
         if($users->count() > 0){
