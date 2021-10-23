@@ -82,7 +82,7 @@
         <div class="mt-6 md:text-lg text-gray-500">
           <div>
             <span class="text-2xl font-bold bg-yellow-300"
-              >Your account is being validated.</span
+              >Your account is being validated. Please wait with in 24 hours. Thank you.</span
             >
           </div>
           <div>

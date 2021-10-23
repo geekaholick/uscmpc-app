@@ -20565,7 +20565,7 @@ var _hoisted_43 = {
   key: 1
 };
 
-var _hoisted_44 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<div class=\"mt-6 md:text-lg text-gray-500\"><div><span class=\"text-2xl font-bold bg-yellow-300\">Your account is being validated.</span></div><div> ---<br> If you have questions, please don&#39;t hesitate to contact the office.<br> Email: official.uscmpc@gmail.com<br> USCMPC Technical Committee Contact Number: (032)233 4341<br> Contact Person: USC MPC Registration Team<br> ---<br> Contact Number: (032)384 0024<br> Contact Person: Maria Conception Gaviola </div></div>", 1);
+var _hoisted_44 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<div class=\"mt-6 md:text-lg text-gray-500\"><div><span class=\"text-2xl font-bold bg-yellow-300\">Your account is being validated. Please wait with in 24 hours. Thank you.</span></div><div> ---<br> If you have questions, please don&#39;t hesitate to contact the office.<br> Email: official.uscmpc@gmail.com<br> USCMPC Technical Committee Contact Number: (032)233 4341<br> Contact Person: USC MPC Registration Team<br> ---<br> Contact Number: (032)384 0024<br> Contact Person: Maria Conception Gaviola </div></div>", 1);
 
 function render(_ctx, _cache, $props, $setup, $data, $options) {
   var _component_jet_button = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("jet-button");
