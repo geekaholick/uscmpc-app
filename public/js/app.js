@@ -26230,7 +26230,7 @@ var _withId = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.withScopeId)("dat
 (0,vue__WEBPACK_IMPORTED_MODULE_0__.pushScopeId)("data-v-317d1a6e");
 
 var _hoisted_1 = {
-  "class": "\r\n      relative\r\n      flex\r\n      items-top\r\n      justify-center\r\n      min-h-screen\r\n      bg-gray-100\r\n      dark:bg-gray-900\r\n      sm:items-center sm:pt-0\r\n    "
+  "class": "\r\n            relative\r\n            flex\r\n            items-top\r\n            justify-center\r\n            min-h-screen\r\n            bg-gray-100\r\n            dark:bg-gray-900\r\n            sm:items-center sm:pt-0\r\n        "
 };
 var _hoisted_2 = {
   key: 0,
@@ -26270,7 +26270,7 @@ var _hoisted_7 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("
 );
 
 var _hoisted_8 = {
-  "class": "\r\n          mt-8\r\n          bg-white\r\n          dark:bg-gray-800\r\n          overflow-hidden\r\n          shadow\r\n          sm:rounded-lg\r\n        "
+  "class": "\r\n                    mt-8\r\n                    bg-white\r\n                    dark:bg-gray-800\r\n                    overflow-hidden\r\n                    shadow\r\n                    sm:rounded-lg\r\n                "
 };
 var _hoisted_9 = {
   "class": "grid grid-cols-1 md:grid-cols-1"
@@ -26315,7 +26315,7 @@ var _hoisted_16 = {
 };
 
 var _hoisted_17 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("span", {
-  "class": "\r\n                        text-sm text-green-400 text-2xl\r\n                        2xl:leading-8\r\n                        font-bold\r\n                      "
+  "class": "\r\n                                                text-sm text-green-400 text-2xl\r\n                                                2xl:leading-8\r\n                                                font-bold\r\n                                            "
 }, "Proceed to Dashboard", -1
 /* HOISTED */
 );
@@ -26351,7 +26351,7 @@ var _hoisted_25 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(
 }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", {
   "class": "items-center"
 }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", {
-  "class": "text-center text-lg text-gray-500 sm:text-right sm:ml-0"
+  "class": "\r\n                                    text-center text-lg text-gray-500\r\n                                    sm:text-right sm:ml-0\r\n                                "
 }, " USC MPC Board of Directors (BOD) ")])])], -1
 /* HOISTED */
 );
@@ -26363,27 +26363,51 @@ var _hoisted_26 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(
 }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("                    <div class=\"m-4\" v-for=\"x in 7\">"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("                        <img :src=\"'/images/ {{ x }} .jpg'\" class=\"rounded-full h-36 w-36 object-cover\">"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("                    </div>"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", {
   "class": "p-6"
 }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("img", {
-  src: "/images/1.jpg",
+  src: "/images/6.jpg",
   alt: "Logo",
   "class": "rounded-full h-36 w-36 object-cover"
-})]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", {
-  "class": "\r\n              p-6\r\n              border-t border-gray-200\r\n              dark:border-gray-700\r\n              md:border-t-0 md:border-l\r\n            "
+}), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" Chair ")]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", {
+  "class": "\r\n                            p-6\r\n                            border-t border-gray-200\r\n                            dark:border-gray-700\r\n                            md:border-t-0 md:border-l\r\n                        "
 }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("img", {
   src: "/images/2.jpg",
   alt: "Logo",
   "class": "rounded-full h-36 w-36 object-cover"
-})]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <div class=\"p-6 border-t border-gray-200 dark:border-gray-700 md:border-t-0 md:border-l\">\r\n                        <img src=\"/images/3.jpg\" alt=\"Logo\" class=\"rounded-full h-36 w-36 object-cover\"/>\r\n                    </div> "), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <div class=\"p-6 border-t border-gray-200 dark:border-gray-700 md:border-t-0 md:border-l\">\r\n                        <img src=\"/images/4.jpg\" alt=\"Logo\" class=\"rounded-full h-36 w-36 object-cover\"/>\r\n                    </div> "), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <div class=\"p-6 border-t border-gray-200 dark:border-gray-700 md:border-t-0 md:border-l\">\r\n                        <img src=\"/images/5.jpg\" alt=\"Logo\" class=\"rounded-full h-36 w-36 object-cover\"/>\r\n                    </div> "), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", {
-  "class": "\r\n              p-6\r\n              border-t border-gray-200\r\n              dark:border-gray-700\r\n              md:border-t-0 md:border-l\r\n            "
+}), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" Vice Chair ")]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", {
+  "class": "\r\n                            p-6\r\n                            border-t border-gray-200\r\n                            dark:border-gray-700\r\n                            md:border-t-0 md:border-l\r\n                        "
 }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("img", {
-  src: "/images/6.jpg",
+  src: "/images/1.jpg",
   alt: "Logo",
   "class": "rounded-full h-36 w-36 object-cover"
-})]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <div class=\"p-6 border-t border-gray-200 dark:border-gray-700 md:border-t-0 md:border-l\">\r\n                        <img src=\"/images/7.jpg\" alt=\"Logo\" class=\"rounded-full h-36 w-36 object-cover\"/>\r\n                    </div> ")], -1
+}), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" Member ")]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", {
+  "class": "\r\n                            p-6\r\n                            border-t border-gray-200\r\n                            dark:border-gray-700\r\n                            md:border-t-0 md:border-l\r\n                        "
+}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("img", {
+  src: "/images/8.jpg",
+  alt: "Logo",
+  "class": "rounded-full h-36 w-36 object-cover"
+}), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" Member ")]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", {
+  "class": "\r\n                            p-6\r\n                            border-t border-gray-200\r\n                            dark:border-gray-700\r\n                            md:border-t-0 md:border-l\r\n                        "
+}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("img", {
+  src: "/images/9.jpg",
+  alt: "Logo",
+  "class": "rounded-full h-36 w-36 object-cover"
+}), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" Member ")]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", {
+  "class": "\r\n                            p-6\r\n                            border-t border-gray-200\r\n                            dark:border-gray-700\r\n                            md:border-t-0 md:border-l\r\n                        "
+}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("img", {
+  src: "/images/10.jpg",
+  alt: "Logo",
+  "class": "rounded-full h-36 w-36 object-cover"
+}), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" Treasurer ")]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", {
+  "class": "\r\n                            p-6\r\n                            border-t border-gray-200\r\n                            dark:border-gray-700\r\n                            md:border-t-0 md:border-l\r\n                        "
+}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("img", {
+  src: "/images/11.jpg",
+  alt: "Logo",
+  "class": "rounded-full h-36 w-36 object-cover"
+}), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" Secretary ")])], -1
 /* HOISTED */
 );
 
 var _hoisted_27 = {
-  "class": "flex justify-center mt-4 sm:items-center sm:justify-between"
+  "class": "\r\n                    flex\r\n                    justify-center\r\n                    mt-4\r\n                    sm:items-center sm:justify-between\r\n                "
 };
 var _hoisted_28 = {
   "class": "text-center text-sm text-gray-500 sm:text-left"
@@ -26393,7 +26417,7 @@ var _hoisted_29 = {
 };
 var _hoisted_30 = {
   key: 0,
-  "class": "ml-4 text-center text-sm text-gray-500 sm:left sm:ml-0"
+  "class": "\r\n                                ml-4\r\n                                text-center text-sm text-gray-500\r\n                                sm:left sm:ml-0\r\n                            "
 };
 
 var _hoisted_31 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" Dashboard ");
@@ -26403,7 +26427,7 @@ var _hoisted_32 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNo
 var _hoisted_33 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" Register ");
 
 var _hoisted_34 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", {
-  "class": "ml-4 text-center text-sm text-gray-500 sm:text-right sm:ml-0"
+  "class": "\r\n                        ml-4\r\n                        text-center text-sm text-gray-500\r\n                        sm:text-right sm:ml-0\r\n                    "
 }, " Powered by USC MPC TT ", -1
 /* HOISTED */
 );
@@ -26468,7 +26492,7 @@ var render = /*#__PURE__*/_withId(function (_ctx, _cache, $props, $setup, $data,
     key: 1
   }, [_hoisted_18, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_inertia_link, {
     href: _ctx.route('login'),
-    "class": "ml-4 text-sm text-gray-700 underline"
+    "class": "\r\n                                                ml-4\r\n                                                text-sm text-gray-700\r\n                                                underline\r\n                                            "
   }, {
     "default": _withId(function () {
       return [_hoisted_19];
@@ -26480,7 +26504,7 @@ var render = /*#__PURE__*/_withId(function (_ctx, _cache, $props, $setup, $data,
   /* PROPS */
   , ["href"]), _hoisted_20, _hoisted_21, _hoisted_22, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_inertia_link, {
     href: _ctx.route('register'),
-    "class": "ml-4 text-sm text-gray-700 underline"
+    "class": "\r\n                                                ml-4\r\n                                                text-sm text-gray-700\r\n                                                underline\r\n                                            "
   }, {
     "default": _withId(function () {
       return [_hoisted_23];
@@ -26743,7 +26767,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\n.bg-gray-100[data-v-317d1a6e] {\r\n  background-color: #f7fafc;\r\n  background-color: rgba(247, 250, 252, var(--tw-bg-opacity));\n}\n.border-gray-200[data-v-317d1a6e] {\r\n  border-color: #edf2f7;\r\n  border-color: rgba(237, 242, 247, var(--tw-border-opacity));\n}\n.text-gray-400[data-v-317d1a6e] {\r\n  color: #cbd5e0;\r\n  color: rgba(203, 213, 224, var(--tw-text-opacity));\n}\n.text-gray-500[data-v-317d1a6e] {\r\n  color: #a0aec0;\r\n  color: rgba(160, 174, 192, var(--tw-text-opacity));\n}\n.text-gray-600[data-v-317d1a6e] {\r\n  color: #718096;\r\n  color: rgba(113, 128, 150, var(--tw-text-opacity));\n}\n.text-gray-700[data-v-317d1a6e] {\r\n  color: #4a5568;\r\n  color: rgba(74, 85, 104, var(--tw-text-opacity));\n}\n.text-gray-900[data-v-317d1a6e] {\r\n  color: #1a202c;\r\n  color: rgba(26, 32, 44, var(--tw-text-opacity));\n}\n@media (prefers-color-scheme: dark) {\n.dark\\:bg-gray-800[data-v-317d1a6e] {\r\n    background-color: #2d3748;\r\n    background-color: rgba(45, 55, 72, var(--tw-bg-opacity));\n}\n.dark\\:bg-gray-900[data-v-317d1a6e] {\r\n    background-color: #1a202c;\r\n    background-color: rgba(26, 32, 44, var(--tw-bg-opacity));\n}\n.dark\\:border-gray-700[data-v-317d1a6e] {\r\n    border-color: #4a5568;\r\n    border-color: rgba(74, 85, 104, var(--tw-border-opacity));\n}\n.dark\\:text-white[data-v-317d1a6e] {\r\n    color: #fff;\r\n    color: rgba(255, 255, 255, var(--tw-text-opacity));\n}\n.dark\\:text-gray-400[data-v-317d1a6e] {\r\n    color: #cbd5e0;\r\n    color: rgba(203, 213, 224, var(--tw-text-opacity));\n}\n}\r\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\n.bg-gray-100[data-v-317d1a6e] {\r\n    background-color: #f7fafc;\r\n    background-color: rgba(247, 250, 252, var(--tw-bg-opacity));\n}\n.border-gray-200[data-v-317d1a6e] {\r\n    border-color: #edf2f7;\r\n    border-color: rgba(237, 242, 247, var(--tw-border-opacity));\n}\n.text-gray-400[data-v-317d1a6e] {\r\n    color: #cbd5e0;\r\n    color: rgba(203, 213, 224, var(--tw-text-opacity));\n}\n.text-gray-500[data-v-317d1a6e] {\r\n    color: #a0aec0;\r\n    color: rgba(160, 174, 192, var(--tw-text-opacity));\n}\n.text-gray-600[data-v-317d1a6e] {\r\n    color: #718096;\r\n    color: rgba(113, 128, 150, var(--tw-text-opacity));\n}\n.text-gray-700[data-v-317d1a6e] {\r\n    color: #4a5568;\r\n    color: rgba(74, 85, 104, var(--tw-text-opacity));\n}\n.text-gray-900[data-v-317d1a6e] {\r\n    color: #1a202c;\r\n    color: rgba(26, 32, 44, var(--tw-text-opacity));\n}\n@media (prefers-color-scheme: dark) {\n.dark\\:bg-gray-800[data-v-317d1a6e] {\r\n        background-color: #2d3748;\r\n        background-color: rgba(45, 55, 72, var(--tw-bg-opacity));\n}\n.dark\\:bg-gray-900[data-v-317d1a6e] {\r\n        background-color: #1a202c;\r\n        background-color: rgba(26, 32, 44, var(--tw-bg-opacity));\n}\n.dark\\:border-gray-700[data-v-317d1a6e] {\r\n        border-color: #4a5568;\r\n        border-color: rgba(74, 85, 104, var(--tw-border-opacity));\n}\n.dark\\:text-white[data-v-317d1a6e] {\r\n        color: #fff;\r\n        color: rgba(255, 255, 255, var(--tw-text-opacity));\n}\n.dark\\:text-gray-400[data-v-317d1a6e] {\r\n        color: #cbd5e0;\r\n        color: rgba(203, 213, 224, var(--tw-text-opacity));\n}\n}\r\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
